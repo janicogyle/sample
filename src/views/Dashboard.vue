@@ -1,0 +1,296 @@
+<template>
+    <div class="Dashboard">
+        <div class="row" id="one">
+          <h2 class="text-lg font-bold">TOP ITEMS IN INVENTORY</h2>
+
+          <form method="POST">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Item</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>APPLES</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>BANANAS</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>ORANGES</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>MAGNO</td>
+                </tr>
+              </tbody>
+            </table>
+          </form>
+          
+        </div>
+        
+        <div class="container">
+          <div class="row" id="two">
+            <h2 class="text-lg font-bold">TO DO LIST:</h2>
+            <ul class="todo-list">
+              <li>
+                <input type="checkbox" checked />
+                <span>Kakain</span>
+              </li>
+              <li>
+                <input type="checkbox" checked />
+                <span>Matututulog</span>
+              </li>
+              <li>
+                <input type="checkbox" checked />
+                <span>luto</span>
+              </li>
+              <li>
+                <input type="checkbox" checked />
+                <span>hugas</span>
+              </li>
+              <li>
+                <input type="checkbox" checked />
+                <span>linis</span>
+              </li>
+            </ul>
+          </div>
+    
+          <div class="row" id="three">
+            <h2 class="text-lg font-bold">RECENTLY PURCHASED ITEM</h2>
+            <canvas id="stockChart"></canvas>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Item</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>APPLES</td>
+                  <td>40</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>BANANAS</td>
+                  <td>30</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>ORANGES</td>
+                  <td>20</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>WATERMELON</td>
+                  <td>10</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="row" id="four">
+          <h2 class="text-lg font-bold">LOGIN TRACKER</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>STAFF ID</th>
+                <th>NAME</th>
+                <th>DATE & TIME</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>101</td>
+                <td>LENG</td>
+                <td>12/25/24 9:25:43.6</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+</template>
+
+<script>
+
+export default {
+  name: 'Dashboard',
+  components: { }   
+}
+</script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    background-color: #111022;
+}
+
+.navbar {
+    background-color: white;
+    width: 300px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    position: fixed;
+    text-align: center;
+}
+
+.navbar .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.navbar .logo img {
+    width: 260px;
+    height: 230px;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 15px 0;
+}
+
+.navbar ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 16px;
+    transition: 0.3s;
+    font-weight: bolder;
+}
+
+.navbar ul li a:hover {
+    background-color: #9b9ea4;
+    border-radius: 5px;
+}
+
+.navbar .logout a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+}
+.navbar .logout a:hover{
+    background-color: #9b9ea4;
+    border-radius: 5px;
+}
+
+/* dito */
+  /* inventory */
+      #one{
+        background-color: #201e43; 
+        border: 2px solid;
+        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
+        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
+        height: 370px;
+        width: 590px;
+        margin: 15px;
+        position: absolute;
+        margin-top: 15px;
+        margin-left: 320px;
+        text-align: center;
+        color: white;
+      }
+      /*to do list*/
+      #two{
+        background-color: #201e43; 
+        border: 2px solid;
+        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
+        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
+        height: 310px;
+        width: 590px;
+        margin: 15px;
+        position: absolute;
+        margin-left: 320px;
+        margin-top: 405px;
+        text-align: center;
+        color: white;
+      }
+      /*recent item */
+      #three{
+        background-color: #201e43;
+        border: 2px solid;
+        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
+        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
+        height: 395px;
+        width: 570px;
+        margin: 15px;
+        position: absolute;
+        margin-left: 930px;
+        margin-top: 315px;
+        text-align: center;
+        color: white;
+      }
+      /*login tracker */
+      #four{
+        background-color: #201e43; 
+        border: 2px solid;
+        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
+        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
+        height: 280px;
+        width: 570px;
+        margin: 15px;
+        position: absolute;
+        margin-top: 100px;
+        margin-left: 930px;
+        margin-top: 15px;
+        text-align: center;
+        color: white;
+      }
+      
+  
+      
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+
+      }
+      .table th, .table td {
+        border: 1px solid #cccccc;
+        padding: 10px;
+        text-align: left;
+      }
+      .todo-list {
+        margin-top: 10px;
+        text-align: left;
+        margin-left: 40px;
+      }
+      .todo-list input {
+        margin-right: 10px;
+        
+      }
+      canvas {
+       position: absolute;
+      }
+</style>
