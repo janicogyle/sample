@@ -129,7 +129,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped> 
 * {
     margin: 0;
     padding: 0;
@@ -143,133 +143,6 @@ body {
     background-color: #111022;
 }
 
-.navbar {
-    background-color: white;
-    width: 300px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    position: fixed;
-    text-align: center;
-}
-
-.navbar .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.navbar .logo img {
-    width: 260px;
-    height: 230px;
-}
-
-.navbar ul {
-    list-style: none;
-}
-
-.navbar ul li {
-    margin: 15px 0;
-}
-
-.navbar ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 16px;
-    transition: 0.3s;
-    font-weight: bolder;
-}
-
-.navbar ul li a:hover {
-    background-color: #9b9ea4;
-    border-radius: 5px;
-}
-
-.navbar .logout a {
-    color: black;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bolder;
-}
-.navbar .logout a:hover{
-    background-color: #9b9ea4;
-    border-radius: 5px;
-}
-
-/* dito */
-  /* inventory */
-      #one{
-        background-color: #201e43; 
-        border: 2px solid;
-        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
-        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
-        height: 370px;
-        width: 590px;
-        margin: 15px;
-        position: absolute;
-        margin-top: 15px;
-        margin-left: 320px;
-        text-align: center;
-        color: white;
-      }
-      /*to do list*/
-      #two{
-        background-color: #201e43; 
-        border: 2px solid;
-        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
-        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
-        height: 310px;
-        width: 590px;
-        margin: 15px;
-        position: absolute;
-        margin-left: 320px;
-        margin-top: 405px;
-        text-align: center;
-        color: white;
-      }
-      /*recent item */
-      #three{
-        background-color: #201e43;
-        border: 2px solid;
-        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
-        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
-        height: 395px;
-        width: 570px;
-        margin: 15px;
-        position: absolute;
-        margin-left: 930px;
-        margin-top: 315px;
-        text-align: center;
-        color: white;
-      }
-      /*login tracker */
-      #four{
-        background-color: #201e43; 
-        border: 2px solid;
-        border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
-        box-shadow: 0 4px 8px rgba(16, 1, 58, 0.1);
-        height: 280px;
-        width: 570px;
-        margin: 15px;
-        position: absolute;
-        margin-top: 100px;
-        margin-left: 930px;
-        margin-top: 15px;
-        text-align: center;
-        color: white;
-      }
-      
-  
-      
       .table {
         width: 100%;
         border-collapse: collapse;

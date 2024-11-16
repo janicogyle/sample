@@ -92,7 +92,7 @@
 </div>
 </template> 
 
-<style>
+<style scoped>
 * {
             margin: 0;
             padding: 0;
@@ -111,66 +111,6 @@
             width: 100%;
         }
 
-        .navbar {
-            background-color: white;
-            width: 300px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
-            text-align: center;
-            font-weight: bold;
-            position: fixed;
-            transition: width 0.3s, padding 0.3s;
-        }
-
-        .navbar .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .navbar .logo img {
-            width: 180px;
-            height: auto;
-        }
-
-        .navbar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .navbar ul li {
-            margin: 20px 0;
-        }
-
-        .navbar ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 18px;
-            display: block;
-            padding: 15px;
-            transition: 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            background-color: #9b9ea4;
-            border-radius: 5px;
-        }
-
-        .navbar .logout a {
-            color: black;
-            text-decoration: none;
-            padding: 12px;
-            border-radius: 5px;
-        }
-
-        .navbar .logout a:hover {
-            background-color: #9b9ea4;
-            border-radius: 5px;
-        }
 
         .main-content {
             margin-left: 330px;
@@ -178,6 +118,8 @@
             width: calc(100% - 330px);
             display: flex;
             flex-direction: column;
+        
+        
         }
 
         .button-container {

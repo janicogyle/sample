@@ -3,8 +3,17 @@ import Inventory from '../views/Inventory.vue'
 import Dashboard from '../views/Dashboard.vue'
 import LoginTracker from '../views/LoginTracker.vue'
 import StockReport from '../views/StockReport.vue'
+import Login from '../views/Login.vue'
 
 const routes = [
+
+  {
+    path: '/',
+    redirect: 'Login',
+    meta: { layout: 'empty' }
+   
+  },
+
   {
     path: '/Dashboard',
     name: 'Dashboard',
@@ -26,7 +35,15 @@ const routes = [
     path: '/LoginTracker',
     name: 'logintracker',
    component: LoginTracker
-  }
+  },
+ 
+  {
+    path: '/Login',
+    name: 'Login',
+    component: Login,
+    meta: { layout: 'empty' }
+    
+  },
 ]
 
 const router = createRouter({

@@ -1,90 +1,142 @@
 <template>
-   <div class="main-content">
-        <div class="header">
-            <div class="dropdown">
-                <!-- Combined Dropdown -->
-                <select id="combinedDropdown">
-                   <optgroup label="Alphabetical">
-                       <option value="a-z">A-Z (Ascending)</option>
-                       <option value="z-a">Z-A (Descending)</option>
-                   </optgroup>
-                   <optgroup label="Quantities">
-                       <option value="high-stocks">High Stocks</option>
-                       <option value="low-stocks">Low Stocks</option>
-                   </optgroup>
-                   <optgroup label="Categories">
-                       <option value="writing">Writing Supplies</option>
-                       <option value="paper">Paper Products</option>
-                       <option value="arts">Arts & Crafts Materials</option>
-                       <option value="org-tools">Organizational Tools</option>
-                       <option value="miscellaneous">Miscellaneous</option>
-                   </optgroup>
-               </select>
-           </div>
-           <div class="search">
-            <input type="text" placeholder="Search">
-            <button>
-                <i class="fas fa-search"></i>
-            </button>
+    <div class="main-content">
+      <div class="header">
+        <div class="dropdown">
+          <!-- Combined Dropdown -->
+          <select id="combinedDropdown">
+            <optgroup label="Alphabetical">
+              <option value="a-z">A-Z (Ascending)</option>
+              <option value="z-a">Z-A (Descending)</option>
+            </optgroup>
+            <optgroup label="Quantities">
+              <option value="high-stocks">High Stocks</option>
+              <option value="low-stocks">Low Stocks</option>
+            </optgroup>
+            <optgroup label="Categories">
+              <option value="writing">Writing Supplies</option>
+              <option value="paper">Paper Products</option>
+              <option value="arts">Arts & Crafts Materials</option>
+              <option value="org-tools">Organizational Tools</option>
+              <option value="miscellaneous">Miscellaneous</option>
+            </optgroup>
+          </select>
         </div>
+        <div class="search">
+          <input type="text" placeholder="Search" v-model="searchQuery">
+          <button @click="search">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+  
+      <table id="inventory-table">
+        <thead>
+          <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-if="!records.length">
+            <td colspan="6" style="text-align: center;">No records found.</td>
+          </tr>
+          <tr v-for="record in records" :key="record.id">
+            <td>{{ record.id }}</td>
+            <td>{{ record.name }}</td>
+            <td>{{ record.brand }}</td>
+            <td>{{ record.category }}</td>
+            <td>{{ record.quantity }}</td>
+            <td>{{ record.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+  
+      <button class="edit-button" @click="toggleModal">EDIT</button>
 
+  <div v-if="isModalVisible" class="modal" @click.self="toggleModal">
+    <div class="modal-content">
+      <button class="close-btn" @click="toggleModal">X</button>
+      <h2 class="title">STOCK UP</h2>
+      <div class="input-group">
+        <label for="item-id">ITEM ID</label>
+        <input type="text" id="item-id" v-model="form.itemId" placeholder="Enter Item ID">
+      </div>
+      <div class="input-group">
+        <label for="item-name">ITEM</label>
+        <input type="text" id="item-name" v-model="form.itemName" placeholder="Enter Item Name">
+      </div>
+      <div class="input-group">
+        <label for="quantity">QUANTITY</label>
+        <input type="number" id="quantity" v-model="form.quantity" placeholder="Enter Quantity">
+      </div>
+      <div class="input-group">
+        <label for="status">STATUS</label>
+        <input type="text" id="status" v-model="form.status" placeholder="Enter Status">
+      </div>
+      <div class="button-group">
+        <button class="btn" @click="addRecord">ADD</button>
+        <button class="btn" @click="updateRecord">UPDATE</button>
+        <button class="btn" @click="deleteRecord">DELETE</button>
+        <button class="btn" @click="resetForm">RESET</button>
+      </div>
         </div>
-        
-       
-        <table id="inventory-table">
-            <thead>
-                <tr>
-                    <th>Item ID</th>
-                    <th>Item Name</th>
-                    <th>Brand</th>
-                    <th>Category</th>
-                    <th>Quantity</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="6" style="text-align: center;">No records found.</td>
-                </tr>
-            </tbody>
-        </table>
+      </div>
     </div>
+  </template>
+  
+  <script>
+export default {
+  data() {
+    return {
+      isModalVisible: false, // Tracks modal visibility
+      searchQuery: "", // Tracks the search query
+      records: [], // Array to hold table data
+      form: {
+        itemId: "",
+        itemName: "",
+        quantity: "",
+        status: "",
+      }, // Tracks form input fields
+    };
+  },
+  methods: {
+    toggleModal() {
+      this.isModalVisible = !this.isModalVisible; // Toggle modal visibility
+    },
+    search() {
+      console.log("Searching for:", this.searchQuery);
+      // Implement search logic here
+    },
+    addRecord() {
+      console.log("Adding record:", this.form);
+      // Implement add record logic here
+    },
+    updateRecord() {
+      console.log("Updating record:", this.form);
+      // Implement update record logic here
+    },
+    deleteRecord() {
+      console.log("Deleting record with ID:", this.form.itemId);
+      // Implement delete record logic here
+    },
+    resetForm() {
+      this.form = {
+        itemId: "",
+        itemName: "",
+        quantity: "",
+        status: "",
+      };
+    },
+  },
+};
+</script>
+  
 
-    <button class="edit-button" id="editBtn">EDIT</button>
-
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeModal">X</button>
-            <h2 class="title">STOCK UP</h2>
-            <div class="input-group">
-                <label for="item-id">ITEM ID</label>
-                <input type="text" id="item-id" placeholder="Enter Item ID">
-            </div>
-            <div class="input-group">
-                <label for="item-name">ITEM</label>
-                <input type="text" id="item-name" placeholder="Enter Item Name">
-            </div>
-            <div class="input-group">
-                <label for="quantity">QUANTITY</label>
-                <input type="number" id="quantity" placeholder="Enter Quantity">
-            </div>
-            <div class="input-group">
-                <label for="status">STATUS</label>
-                <input type="text" id="status" placeholder="Enter Status">
-            </div>
-            <div class="button-group">
-                <button class="btn">ADD</button>
-                <button class="btn">UPDATE</button>
-                <button class="btn">DELETE</button>
-                <button class="btn">RESET</button>
-            </div>
-        </div>
-    </div>
-   
-</template>
-
-
-<style>
+<style scoped>
 * {
     margin: 0;
     padding: 0;
@@ -100,60 +152,6 @@ body {
 
 .container {
     display: flex;
-}
-
-.navbar {
-    background-color: white;
-    width: 300px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    position: fixed;
-    text-align: center;
-    font-weight: bold;
-    transition: width 0.3s, padding 0.3s; /* Smooth transition */
-}
-
-.navbar .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-}
-
-.navbar .logo img {
-    width: 230px;
-}
-
-.navbar ul {
-    list-style: none;
-}
-
-.navbar ul li {
-    margin: 20px 0;
-}
-
-.navbar ul li a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 15px;
-    transition: 0.3s;
-}
-
-.navbar ul li a:hover, .navbar .logout a:hover {
-    background-color: #9b9ea4;
-    border-radius: 5px;
-}
-
-.navbar .logout a {
-    color: black;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 5px;
 }
 
 .main-content {

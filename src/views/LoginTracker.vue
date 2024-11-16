@@ -31,7 +31,7 @@
         </div>
 </template>
 
-<style>
+<style scoped>
  * {
             margin: 0;
             padding: 0;
@@ -48,67 +48,6 @@
         .container {
             display: flex;
             width: 100%;
-        }
-
-        .navbar {
-            background-color: white;
-            width: 300px; /* Original width for larger screens */
-            padding: 20px; /* Original padding */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
-            text-align: center;
-            font-weight: bold;
-            position: fixed; /* Keep fixed for larger screens */
-            transition: width 0.3s, padding 0.3s; /* Smooth transition */
-        }
-
-        .navbar .logo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 10px;
-        }
-
-        .navbar .logo img {
-            width: 230px; /* Original logo size */
-            height: auto;
-        }
-
-        .navbar ul {
-            list-style: none;
-            padding: 0; /* Remove padding */
-        }
-
-        .navbar ul li {
-            margin: 20px 0; /* Original margin */
-        }
-
-        .navbar ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 18px; /* Original font size */
-            display: block;
-            padding: 15px; /* Original padding */
-            transition: 0.3s;
-        }
-
-        .navbar ul li a:hover {
-            background-color: #9b9ea4;
-            border-radius: 5px;
-        }
-
-        .navbar .logout a {
-            color: black;
-            text-decoration: none;
-            padding: 12px; /* Original padding */
-            border-radius: 5px;
-        }
-
-        .navbar .logout a:hover {
-            background-color: #9b9ea4;
-            border-radius: 5px;
         }
 
         .main-content {
@@ -137,6 +76,7 @@
             margin-right: 10px;
             width: 250px; /* Adjusted for better responsiveness */
             height: 36px; /* Reduced height */
+            
         }
 
         .search button {
@@ -147,6 +87,7 @@
             padding: 10px;
             cursor: pointer;
             height: 36px; /* Reduced height */
+            margin-left: 45px;
         }
 
         .search button:hover {
@@ -156,7 +97,7 @@
 
         .staff-table {
             background-color: white;
-            width: 100%; /* Make it responsive */
+            width: 97%; /* Make it responsive */
             border: 3px solid;
             border-image: linear-gradient(to right, #5952d5, #0f0b3a) 1;
             margin-top: 20px; /* Space above the table */
@@ -206,73 +147,4 @@
             background-color: white;
             color: #201e43;
         }
-
-/* Media Query for smaller screens */
-@media (max-width: 768px) {
-    .navbar {
-        width: 100px; 
-        padding: 10px; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-    }
-
-    .navbar .logo img {
-        width: 100px; 
-    }
-
-    .navbar ul {
-        list-style-type: none; 
-        padding: 0; 
-        margin: 0; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-    }
-
-    .navbar ul li {
-        margin: 10px 0;
-        display: flex; 
-        justify-content: center; 
-    }
-
-    .navbar ul li a {
-        font-size: 27px; 
-        padding: 8px; 
-        display: flex; 
-        align-items: center;
-    }
-
-    .nav-text {
-        display: none; 
-    }
-  
-    .navbar .logout a {
-        font-size: 27px; 
-        padding: 8px; 
-        display: flex; 
-        align-items: center; 
-
-    }
-
-    .main-content {
-        margin-left: 110px; 
-        width: calc(100% - 120px); 
-    }
-
-    .search input {
-        width: 100%; 
-    }
-
-    .delete-section {
-        flex-direction: row;
-        align-items: flex-start; 
-    }
-
-    .staff-id-input {
-        width: 50%;
-        margin-bottom: 10px; 
-    }
-}
-
 </style>
