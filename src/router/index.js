@@ -4,6 +4,7 @@ import Dashboard from '../views/Dashboard.vue'
 import LoginTracker from '../views/LoginTracker.vue'
 import StockReport from '../views/StockReport.vue'
 import Login from '../views/Login.vue'
+import HelpSupport from '../views/HelpSupport.vue'
 
 const routes = [
 
@@ -19,6 +20,13 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard
   },
+
+  {
+    path: '/HelpSupport',
+    name: 'HelpSupport',
+    component: HelpSupport
+  },
+  
   {
     path: '/Inventory',
     name: 'Inventory',
@@ -44,6 +52,7 @@ const routes = [
     meta: { layout: 'empty' }
     
   },
+  
 ]
 
 const router = createRouter({

@@ -2,7 +2,7 @@
     <div class="form-container">
       <div class="col col-1">
         <div class="image-layer">
-          <img src="../assets/images/logo cloud.png" alt="Logo" class="form-image-main" />
+          <img src="../assets/images/logo.png" alt="Logo" class="form-image-main" />
         </div>
         <p class="featured-words">
           Copyright <span>@ STOCK UP</span> By Code Benders,
@@ -169,6 +169,8 @@
       backdrop-filter: blur(20px);
       overflow: hidden;
       margin-left: 280px;
+      margin-bottom: 1000px;
+      position: fixed;
   }
   
   
@@ -408,5 +410,8 @@
           width: 100%;
       }
   
+  }
+  p {
+  color: white;
   }
 </style>  
