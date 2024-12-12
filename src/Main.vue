@@ -53,8 +53,18 @@
             <h3>Logout</h3>
         </router-link>
     </div>
-    
             </aside>
+        
+             <!-- Profile on top  -->
+
+    <div class = "right">
+        <div class= "top">
+            <button id ="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+        </div>
+    </div>
+        <!-- End of top -->
         </div>    
     
     
@@ -455,6 +465,23 @@ main .dash-text{
 }
 
 /* END OF PRODUCT TABLE */
+/* RIGHT SIDE  */
+.right{
+    margin-top: 1.4rem;
+ }
+
+ .right .top{
+    display: flex; 
+    justify-content: end;
+    gap: 2rem;
+    /* background-color; */
+ }
+
+ .right .top button{
+    display: none;
+ }
+ 
+ 
 
 
 /* EDIT CONTAINER */
@@ -554,73 +581,184 @@ main .dash-text{
 /* END OF EDIT CONTAINER */
 
 /* =================Media Queries ======================= */
-/* =================Media Queries ======================= */
+/* tabble mode  */
 @media screen and (max-width: 1200px) {
-   .container {
-       width: 94%; /* Adjust the width for smaller screens */
-       margin-left: 0; /* Remove left margin on smaller screens */
-   }
 
-   aside {
-       width: 6rem; /* Reduce width of sidebar */
-   }
-
-   aside .sidebar a {
-       width: 100%; /* Full width for sidebar links */
-   }
-
-   aside .logo h2 {
-       display: none; /* Hide logo text */
-   }
-
-   aside .sidebar h3 {
-       display: none; /* Hide sidebar titles */
-   }
-
-   main {
-       margin-top: 2rem; /* Adjust margin for main content */
-       padding: 0 1rem; /* Add padding to main content */
-   }
+.container{
+    width: 94%;
+    grid-template-columns: 5rem auto 23rem;
+}
+aside{ 
+    position: fixed;
+    width: 6rem;
 }
 
-@media screen and (max-width: 768px) {
-   aside {
-       position: fixed;
-       left: -100%; /* Start off-screen */
-       background: white;
-       width: 60%; /* Adjust sidebar width */
-       height: 100vh;
-       z-index: 3;
-       box-shadow: 1rem 3rem 4rem white;
-       display: none; /* Hide sidebar initially */
-       animation: showMenu 400ms ease forwards;
-   }
-
-   @keyframes showMenu {
-       to {
-           left: 0; /* Slide in the sidebar */
-       }
-   }
-
-   aside .logo {
-       margin-left: 1rem;   
-   }
-
-   aside .sidebar a {
-       width: 100%; /* Full width for sidebar links */
-       height: 3.4rem; /* Adjust height */
-   }
-
-   aside .close {
-       display: inline-block; /* Show close button */
-       cursor: pointer;
-   }
-
-   main {
-       margin-top: 8rem; /* Ensure main content is below the sidebar */
-       padding: 0 1rem; /* Add padding */
-   }
+aside .logo h2{
+    display: none;
 }
 
+aside .sidebar h3{
+    display: none;
+}
+
+aside .sidebar a {
+    width: 5.6rem;
+}
+
+aside .sidebar a:last-child{
+    position: absolute;
+    bottom:0px;
+}
+
+main .insights{
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+main .recent-orders{
+    width:100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 2rem 0 0 8.8rem;
+}
+
+main .recent-orders table{
+    width: 84vw;
+}
+
+main table thead tr th:last-child,
+main table thead tr th:first-child {
+display: none;
+
+}
+
+main table tbody tr td:last-child,
+main table tbody tr td:first-child {
+display: none;
+}
+
+/* mobile */
+/* ==========================MOBILE ====================== */
+@media screen  and (max-width: 768px) {
+.container {
+    width: 100%;
+    grid-template-columns: 1fr;
+
+}
+
+
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 18rem;
+    height: 100vh;
+    background: rgba(250, 240, 540, 0.3);
+    backdrop-filter: blur(9px);
+    transform: translateX(-100%); /* Hide by default */
+    z-index: 3;
+}
+
+aside.show {
+    transform: translateX(0); /* Slide into view */
+}
+
+@keyframes showMenu {
+to {
+    left: 0;
+}
+}
+
+aside .logo {
+    margin-left: 1rem;   
+}
+
+aside .logo h2{
+    display: inline;
+}
+aside .sidebar  h3{
+    display: inline;
+}
+
+aside .sidebar a{
+    width: 100%;
+    height: 3.4rem;
+}
+
+aside .sidebar a:last-child{
+   position: absolute;
+   bottom: 0;
+}
+
+aside .close{
+    display: inline-block;
+    cursor: pointer;
+}
+main {
+    margin-top: 8rem;
+    padding: 0 1rem;
+}
+
+main{ 
+    grid-column: 1;
+
+}
+
+main .recent-orders{
+    position: relative;
+    margin: 3rem 0 0 0;
+    width: 100%;
+}
+
+main .recent-orders table{ 
+    width: 100%;
+    margin: 0;
+}
+
+.right {
+    width: 94%;
+    margin: 0 auto 4rem;
+}
+
+.right .top{
+    position: fixed;
+    top: 0;
+    left: 0; 
+    align-items: center;
+    padding: 0 0.8rem;
+    height: 4.6rem;
+    background: rgb(248, 248, 248);
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+    box-shadow:  0 1rem 1rem rgb(194, 216, 226);
+}
+
+.right .top .theme-toggler{
+    width: 4.4rem;
+    position: absolute;
+    left: 66%;
+}
+
+.right .profile .info{
+    display: none;
+}
+
+.right .top button{
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: rgb(9, 5, 5);
+    position: absolute;
+    left: 1rem;
+}
+
+.right .top button span {
+    font-size: 2rem;
+
+}
+}
+}
     
     </style>

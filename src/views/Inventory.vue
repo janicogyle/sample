@@ -1,6 +1,12 @@
 <template>
-    
-      <!-- <aside class="navbar">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Help Center</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    </head>    
+      <aside class="navbar">
             <div class="top">
                 <div class="logo">
                     <img src="../assets/images/logo cloud.png" alt="logo">
@@ -42,7 +48,7 @@
                     <h3>Logout</h3>
                 </a>
             </div>
-        </aside> -->
+        </aside>
         <!------------------- END OF NAV BAR -------------------------- -->
      <main>
             <h1 class="dash-text">Inventory</h1>
@@ -598,6 +604,7 @@ margin-left: 1rem;
  position: absolute;
  width: 250px; 
  top: 6rem;
+ margin-left: 17rem;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -702,7 +709,7 @@ main{
 }
 
 main .dash-text{
-    position: absolute;
+   position: absolute;
    top: 2rem;
    left: 17rem;
    color: black;
@@ -713,12 +720,13 @@ main .dash-text{
 .product-table {
 position: absolute;
 top: 10rem;
-width: 1190px;
+width: 90rem;
 padding: 1rem;
 background-color: white;
 border-radius: 8px;
 box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 overflow: hidden;
+left: 17rem;
 }
 
 .product-table table {

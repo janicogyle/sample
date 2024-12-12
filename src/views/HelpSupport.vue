@@ -1,6 +1,5 @@
 <template>
-    <!DOCTYPE html>
-    <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +7,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     </head>
-    <body>
         <div class="container">
-            <!-- <aside>
+            <aside>
                 <div class="top">
                     <div class="logo">
                         <img src="../assets/images/logo cloud.png" alt="logo">
@@ -53,7 +51,7 @@
                     </a>
                 </div>
             </aside>
-             -->
+            
             
            
                 <div class="main-content">
@@ -280,8 +278,7 @@
                 });
             });
         </script> -->
-    </body>
-    </html>
+
     </template>
     
     <script>
@@ -324,7 +321,7 @@
     margin-left: 17rem; /* Add margin to the left to avoid overlap */
     gap: 1.8rem;
     grid-template-columns: auto; /* Change to a single column layout */
-    }
+}
     
     a {
         color: #363636;
@@ -473,13 +470,11 @@
     margin-left: 1rem;
     }
     
-    .main-content{
-    margin-top: 2rem;
-    }
+ 
     
     main .dash-text {
         position: absolute;
-        top: 2rem;
+        top: 1rem;
         left: 17rem;
         color: black;
     
@@ -497,7 +492,7 @@
         text-align: center;
         position: absolute;
         top: 6rem;
-        left: 29rem;
+        left: 25rem;
         transform: translateX(0); /* Removed translateX(-50%) */
         z-index: 1;
     }
@@ -522,7 +517,7 @@
         position: absolute;
         top: 16rem;
         margin: 2rem auto;
-        left: 25rem;
+        left: 21rem;
         transform: translateX(0); /* Removed translateX(-50%) */
         z-index: 1;
     }
@@ -599,7 +594,7 @@
         text-align: center;
         position: absolute;
         top: 40rem;
-        left: 25rem;
+        left: 21rem;
         transform: translateX(0); /* Removed translateX(-50%) */
         z-index: 1;
     }
@@ -687,7 +682,7 @@
         box-shadow: 0 2px  10px rgba(0, 0, 0, 0.1);
         position: absolute;
         top: 76rem;
-        left: 39rem;
+        left: 38rem;
         transform: translateX(0); /* Removed translateX(-50%) */
         z-index: 1;
     }
