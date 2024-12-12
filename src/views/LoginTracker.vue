@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <aside>
+        <!-- <aside>
             <div class="top">
                 <div class="logo">
                     <img src="../assets/images/logo cloud.png" alt="logo">
@@ -54,7 +54,7 @@
                     <h3>Logout</h3>
                 </a>
             </div>
-        </aside>
+        </aside> -->
       </div>  
       
         <!------------------- END OF NAV BAR -------------------------- -->

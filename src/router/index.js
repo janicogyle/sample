@@ -35,13 +35,13 @@ const routes = [
 
   {
     path: '/StockReport',
-    name: 'stockkreport',
+    name: 'Stockreport',
    component: StockReport
   },
   
   {
     path: '/LoginTracker',
-    name: 'logintracker',
+    name: 'Logintracker',
    component: LoginTracker
   },
  

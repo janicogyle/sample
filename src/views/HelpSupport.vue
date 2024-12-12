@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <aside>
+        <!-- <aside>
             <div class="top">
                 <div class="logo">
                     <img src="../assets/images/logo cloud.png" alt="logo">
@@ -53,7 +53,7 @@
                 </a>
             </div>
         </aside>
-        
+         -->
         
        
             <div class="main-content">
