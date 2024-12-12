@@ -26,7 +26,7 @@ const routes = [
     name: 'HelpSupport',
     component: HelpSupport
   },
-  
+
   {
     path: '/Inventory',
     name: 'Inventory',
@@ -35,13 +35,13 @@ const routes = [
 
   {
     path: '/StockReport',
-    name: 'Stockreport',
+    name: 'StockReport',
    component: StockReport
   },
   
   {
     path: '/LoginTracker',
-    name: 'Logintracker',
+    name: 'LoginTracker',
    component: LoginTracker
   },
  
@@ -52,7 +52,7 @@ const routes = [
     meta: { layout: 'empty' }
     
   },
-  
+
 ]
 
 const router = createRouter({

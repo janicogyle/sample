@@ -1,16 +1,5 @@
 <template>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inventory</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp "
-    rel="stylesheet">
-  </head>
-<body>
-    <div class="container">
+    
       <!-- <aside class="navbar">
             <div class="top">
                 <div class="logo">
@@ -246,9 +235,7 @@
   </div>
 </div>
 </div>
-  </div>
-</body>
-</html>
+  
   </template>
   
   <script>
@@ -393,21 +380,21 @@ html{
 
 body {
    background: url(../assets/images/back.png);
-   width: 100vw;
-   height: 100vh;
+   width: 100%;
+   height: 100%;
    font-family: poppins, sans-serif;
    font-size: 0.88rem;
    background-color: rgb(160, 173, 237);
    user-select: none; 
-   overflow-x:hidden;  
+   overflow:hidden;  
    color: #363949;
 }
 .container {
    display: grid;
    width: calc(100% - 14rem); /* Adjust the width to account for the sidebar */
-   margin-left: 17rem; /* Add margin to the left to avoid overlap */
+   margin-left: 15rem; /* Add margin to the left to avoid overlap */
    gap: 1.8rem;
-   grid-template-columns: auto; /* Change to a single column layout */
+   height: 100vh;
 }
 
 a{
@@ -608,9 +595,9 @@ margin-left: 1rem;
 
 /* DROPDOWN CONTAINER */
 .dropdown {
- position: relative;
+ position: absolute;
  width: 250px; 
- top: 2rem;
+ top: 6rem;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -711,21 +698,27 @@ margin-left: 1rem;
 
 main{ 
    margin-top: 2rem;
+   font-family: poppins, sans-serif;
 }
 
 main .dash-text{
+    position: absolute;
+   top: 2rem;
+   left: 17rem;
    color: black;
+   
 }
 
 /* PRODUCT TABLE */
 .product-table {
- width: 1190px;
- margin-top: 4rem;
- padding: 1rem;
- background-color: white;
- border-radius: 8px;
- box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
- overflow: hidden;
+position: absolute;
+top: 10rem;
+width: 1190px;
+padding: 1rem;
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+overflow: hidden;
 }
 
 .product-table table {
@@ -770,7 +763,7 @@ main .dash-text{
  cursor: pointer;
  position: fixed;
  bottom: 3rem;
- right: 3rem; 
+right: 3rem;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  transition: transform 0.3s, color 0.3s; 
 }

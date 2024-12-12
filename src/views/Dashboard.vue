@@ -1,6 +1,4 @@
 <template>
-    <!DOCTYPE html>
-    <html lang="en">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +10,6 @@
       <!-- style sheet eme -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 <main>
           <h1 class="dash-text">Dashboard</h1>
            <div class="date">
@@ -172,9 +169,6 @@
 
     <!-- <script src="./order.js"></script>
     <script src="./index.js"></script> -->
-
-</body>
-</html>
 </template>
 
 <script>
