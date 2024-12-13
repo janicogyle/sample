@@ -10,7 +10,49 @@
       <!-- style sheet eme -->
     <link rel="stylesheet" href="style.css">
 </head>
-
+<div class="container">
+    <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="../assets/images/logo cloud.png" alt="logo">
+                        <h2 class="stock_up">Stock Up</h2>
+                    </div>
+                     <div class = "close" id = "close-btn">
+                        <span class="material-icons-sharp">close</span>
+                     </div>
+                </div>
+                <div class="sidebar">
+        <router-link to="/Dashboard" class=" active">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+        </router-link>
+    
+        <router-link to="/Inventory">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Inventory</h3>
+        </router-link>
+    
+        <router-link to="/StockReport">
+            <span class="material-icons-sharp">bar_chart</span>
+            <h3>Stock Report</h3>
+        </router-link>
+    
+        <router-link to="/LoginTracker">
+            <span class="material-icons-sharp">track_changes</span>
+            <h3>Login Tracker</h3>
+        </router-link>
+    
+        <router-link to="/HelpSupport" >
+            <span class="material-icons-sharp">help</span>
+            <h3>Help Support</h3>
+        </router-link>
+    
+        <router-link to="/Logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </router-link>
+    </div>
+            </aside>
 <main>
           <h1 class="dash-text">Dashboard</h1>
            <div class="date">
@@ -166,6 +208,7 @@
                     </div>
                 </div>
             </div>
+            </div>
             <!-- End Recent  -->
 
     <!-- <script src="./order.js"></script>
@@ -229,151 +272,154 @@ body {
     height: 100vh;
 }
 
-a{
-    color: #212640;
+
+a {
+    color: #363636;
 }
+
 
 img {
     display: block;
     width: 100%;
 }
 
-h1{ 
+
+h1 {
     font-weight: 800;
     font-size: 1.8rem;
 }
 
-h2{ 
+
+h2 {
     font-size: 1.4rem;
 }
 
-h3{
+
+h3 {
     font-size: 0.87rem;
 }
 
-.text-muted{
-    color: #212640;
+
+.text-muted {
+    color: #7d8da1;
 }
 
-h4{
+
+h4 {
     font-size: 0.87;
 }
 
-p{
-    color: #212640;
-}
 
-b{
+p {
     color: #677483;
 }
 
-aside{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 14rem;
-    height: 100vh;
-    background: rgba(250, 240, 540, 0.3);
-    /* backdrop-filter:blur(20px); */
+
+b {
+    color: #677483;
 }
 
-aside .top{
+
+aside {
+    height: 100vh;  
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 14rem;
+    z-index: 10;
+}
+
+
+aside .top {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 1.4rem;
-    
+    margin-left: 2rem;
 }
 
-/* aside .logo img {
-    width: 150px; this if for the img logo
- */
- 
 
 aside .logo {
-    display:flex;
-    gap:0.8rem;
+    display: flex;
+    gap: 0.8rem;
     position: relative;
-   
 }
- aside .logo img {
+
+
+aside .logo img {
     width: 2rem;
     height: 2rem;
- }
+}
 
- aside .close{
+
+aside .close {
     display: none;
- }
+}
 
- /* ===============side bar ============ */
 
- aside .sidebar{
-    /* background-color: white; */
-    background: rgba(250, 240, 540, 0.3);    
+aside .sidebar {
+    background: white;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     height: 86vh;
     position: relative;
-    top: 2rem;
- }
+    top: 3rem;
+}
 
- aside h3 {
+
+aside h3 {
     font-weight: 500;
+}
 
- }
 
- aside .sidebar a {
+aside .sidebar a {
     display: flex;
-    color: #212640;
+    color: #677483;
     margin-left: 2rem;
     gap: 1rem;
     align-items: center;
     position: relative;
     height: 3.7rem;
-    transition:  all 300ms ease;
-
- }
- /* ============ */
- aside .sidebar a span { 
     transition: all 300ms ease;
- }
-
-
- aside .sidebar a span{ 
-    font-size: 1.6rem;
-    transition: all 300ms ease; 
- }
-
-aside .sidebar a:last-child{
-    position: absolute;
-    bottom: 2rem;
-    width: 100% ;
 }
 
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+
 aside .sidebar a.active {
-    background: rgb(193, 197, 247);
-    color: #0B2F9F;
+    background: aqua;
+    color: blue;
     margin-left: 0;
 }
 
-aside .sidebar a.active:before{
+
+aside .sidebar a.active:before {
     content: '';
-    width: 6px; 
+    width: 6px;
     height: 100%;
-    background: #6599d8;
+    background: blue;
 }
 
-aside .sidebar a.active span{
-    color: blue;
-    margin-left: calc(1rem - 3px);
+
+aside .sidebar a:hover {
+    color: var(#f74d4d);
 }
 
-aside .sidebar a:hover{
-    color: var(#f74d4d)
-}
 
 aside .sidebar a:hover span {
- margin-left: 1rem;
+    margin-left: 1rem;
 }
 
 /*  ======== MAIN DASH BOARD ============== */

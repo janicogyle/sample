@@ -7,60 +7,52 @@
        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp "
        rel="stylesheet">  
      </head>
-   
-   
-   
+     <div class="container">
+     <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="../assets/images/logo cloud.png" alt="logo">
+                        <h2 class="stock_up">Stock Up</h2>
+                    </div>
+                     <div class = "close" id = "close-btn">
+                        <span class="material-icons-sharp">close</span>
+                     </div>
+                </div>
+                <div class="sidebar">
+        <router-link to="/Dashboard" >
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+        </router-link>
+    
+        <router-link to="/Inventory">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Inventory</h3>
+        </router-link>
+    
+        <router-link to="/StockReport">
+            <span class="material-icons-sharp">bar_chart</span>
+            <h3>Stock Report</h3>
+        </router-link>
+    
+        <router-link to="/LoginTracker" class="active">
+            <span class="material-icons-sharp">track_changes</span>
+            <h3>Login Tracker</h3>
+        </router-link>
+    
+        <router-link to="/HelpSupport">
+            <span class="material-icons-sharp">help</span>
+            <h3>Help Support</h3>
+        </router-link>
+    
+        <router-link to="/Logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </router-link>
+    </div>
+            </aside>
    
        <div class="container">
-      <!--  <aside>
-               <div class="top">
-                   <div class="logo">
-                       <img src="../assets/images/logo cloud.png" alt="logo">
-                       <h2 class="stock_up">Stock Up</h2>
-                   </div>
-                    <div class = "close" id = "close-btn">
-                       <span class="material-icons-sharp">close</span>
-                    </div>
-               </div>
-   
-   
-               <div class="sidebar">
-                   <a href="index.html">
-                       <span class="material-icons-sharp">grid_view</span>
-                       <h3>Dashbord</h3>
-                   </a>
-   
-   
-                   <a href="inventory.html">
-                       <span class="material-icons-sharp">inventory</span>
-                       <h3>Inventory</h3>
-                   </a>
-   
-   
-                   <a href="stockreport.html" >
-                       <span class="material-icons-sharp">bar_chart</span>
-                       <h3>Stock Report</h3>
-                   </a>
-   
-   
-                   <a href="logintracker.html" class="active">
-                       <span class="material-icons-sharp">track_changes</span>
-                       <h3>Login Tracker</h3>
-                   </a>
-   
-   
-                   <a href="help.html" >
-                       <span class="material-icons-sharp">help</span>
-                       <h3>Help Support</h3>
-                   </a>                
-   
-   
-                   <a href="#">
-                       <span class="material-icons-sharp">logout</span>
-                       <h3>Logout</h3>
-                   </a>
-               </div>
-           </aside> -->
+    
          </div>  
         
            <!------------------- END OF NAV BAR -------------------------- -->
@@ -147,9 +139,10 @@
    
    
    </script> -->
-   
+
    
    </main>
+   </div>
    </template>
    
    
@@ -162,6 +155,7 @@
    
    
    <style scoped>
+
       @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
    
    
@@ -196,190 +190,163 @@
    
    
      .container {
-       display: grid;
-       width: 100%;
-       margin-left: 0;
-       gap: 1.8rem;
-       grid-template-columns: 1fr;
-       padding: 2rem;
-     }
-   
-   
-   a{
-       color: #363636;
-   }
-   
-   
-   img {
-       display: block;
-       width: 100%;
-   }
-   
-   
-   h1{
-       font-weight: 800;
-       font-size: 1.8rem;
-   }
-   
-   
-   h2{
-       font-size: 1.4rem;
-   }
-   
-   
-   h3{
-       font-size: 0.87rem;
-   }
-   
-   
-   .text-muted{
-       color: #7d8da1;
-   }
-   
-   
-   h4{
-       font-size: 0.87;
-   }
-   
-   
-   p{
-       color: #677483;
-   }
-   
-   
-   b{
-       color: #677483;
-   }
-   
-   
-   aside{
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 14rem;
-       height: 100vh;
-       background: rgba(250, 240, 540, 0.3);
-       /* backdrop-filter:blur(20px); */
-   }
-   
-   
-   aside .top{
-       display: flex;
-       align-items: center;
-       justify-content: space-around;
-       margin-top: 1.4rem;
-      
-   }
-   
-   
-   /* aside .logo img {
-       width: 150px; this if for the img logo
-    */
-    
-   
-   
-   aside .logo {
-       display:flex;
-       gap:0.8rem;
-       position: relative;
-      
-   }
-    aside .logo img {
-       width: 2rem;
-       height: 2rem;
-    }
-   
-   
-    aside .close{
-       display: none;
-    }
-   
-   
-    /* ===============side bar ============ */
-   
-   
-    aside .sidebar{
-       /* background-color: white; */
-       background: rgba(250, 240, 540, 0.3);    
-       display: flex;
-       flex-direction: column;
-       height: 86vh;
-       position: relative;
-       top: 2rem;
-    }
-   
-   
-    aside h3 {
-       font-weight: 500;
-   
-   
-    }
-   
-   
-    aside .sidebar a {
-       display: flex;
-       color: #212640;
-       margin-left: 2rem;
-       gap: 1rem;
-       align-items: center;
-       position: relative;
-       height: 3.7rem;
-       transition:  all 300ms ease;
-   
-   
-    }
-    /* ============ */
-    aside .sidebar a span {
-       transition: all 300ms ease;
-    }
-   
-   
-   
-   
-    aside .sidebar a span{
-       font-size: 1.6rem;
-       transition: all 300ms ease;
-    }
-   
-   
-   aside .sidebar a:last-child{
-       position: absolute;
-       bottom: 2rem;
-       width: 100% ;
-   }
-   
-   
-   aside .sidebar a.active {
-       background: rgb(193, 197, 247);
-       color: #0B2F9F;
-       margin-left: 0;
-   }
-   
-   
-   aside .sidebar a.active:before{
-       content: '';
-       width: 6px;
-       height: 100%;
-       background: #6599d8;
-   }
-   
-   
-   aside .sidebar a.active span{
-       color: blue;
-       margin-left: calc(1rem - 3px);
-   }
-   
-   
-   aside .sidebar a:hover{
-       color: var(#f74d4d)
-   }
-   
-   
-   aside .sidebar a:hover span {
+    display: grid;
+    width: calc(100% - 14rem);
+    margin-left: 15rem;
+    gap: 1.8rem;
+    height: 100vh;
+}
+
+
+a {
+    color: #363636;
+}
+
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+h1 {
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+
+h2 {
+    font-size: 1.4rem;
+}
+
+
+h3 {
+    font-size: 0.87rem;
+}
+
+
+.text-muted {
+    color: #7d8da1;
+}
+
+
+h4 {
+    font-size: 0.87;
+}
+
+
+p {
+    color: #677483;
+}
+
+
+b {
+    color: #677483;
+}
+
+
+aside {
+    height: 100vh;  
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 14rem;
+    z-index: 10;
+}
+
+
+aside .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    margin-left: 2rem;
+}
+
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+    position: relative;
+}
+
+
+aside .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+aside .close {
+    display: none;
+}
+
+
+aside .sidebar {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+
+
+aside h3 {
+    font-weight: 500;
+}
+
+
+aside .sidebar a {
+    display: flex;
+    color: #677483;
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+
+aside .sidebar a.active {
+    background: aqua;
+    color: blue;
+    margin-left: 0;
+}
+
+
+aside .sidebar a.active:before {
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: blue;
+}
+
+
+aside .sidebar a:hover {
+    color: var(#f74d4d);
+}
+
+
+aside .sidebar a:hover span {
     margin-left: 1rem;
-   }
-   
-   
+}
+
    
    
    /* SEARCH CONTAINER */

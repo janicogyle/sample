@@ -6,55 +6,48 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     </head>    
-      <!-- <aside class="navbar">
-            <div class="top">
-                <div class="logo">
-                    <img src="../assets/images/logo cloud.png" alt="logo">
-                    <h2 class="stock_up">Stock Up</h2>
+    <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="../assets/images/logo cloud.png" alt="logo">
+                        <h2 class="stock_up">Stock Up</h2>
+                    </div>
+                     <div class = "close" id = "close-btn">
+                        <span class="material-icons-sharp">close</span>
+                     </div>
                 </div>
-                 <div class = "close" id = "close-btn">
-                    <span class="material-icons-sharp">close</span>
-                 </div>
-            </div>
-
-
-            <div class="sidebar">
-                <a href="index.html">
-                    <span class="material-icons-sharp">grid_view</span>
-                    <h3>Dashbord</h3>
-                </a>
-
-
-                <a href="inventory.html" class="active">
-                    <span class="material-icons-sharp">inventory</span>
-                    <h3>Inventory</h3>
-                </a>
-
-
-                <a href="stockreport.html" >
-                    <span class="material-icons-sharp">bar_chart</span>
-                    <h3>Stock Report</h3>
-                </a>
-
-
-                <a href="logintracker.html" >
-                    <span class="material-icons-sharp">track_changes</span>
-                    <h3>Login Tracker</h3>
-                </a>
-
-
-                <a href="help.html" >
-                    <span class="material-icons-sharp">help</span>
-                    <h3>Help Support</h3>
-                </a>                
-
-
-                <a href="#">
-                    <span class="material-icons-sharp">logout</span>
-                    <h3>Logout</h3>
-                </a>
-            </div>
-        </aside> -->
+                <div class="sidebar">
+        <router-link to="/Dashboard" >
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+        </router-link>
+    
+        <router-link to="/Inventory" class=" active">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Inventory</h3>
+        </router-link>
+    
+        <router-link to="/StockReport">
+            <span class="material-icons-sharp">bar_chart</span>
+            <h3>Stock Report</h3>
+        </router-link>
+    
+        <router-link to="/LoginTracker">
+            <span class="material-icons-sharp">track_changes</span>
+            <h3>Login Tracker</h3>
+        </router-link>
+    
+        <router-link to="/HelpSupport">
+            <span class="material-icons-sharp">help</span>
+            <h3>Help Support</h3>
+        </router-link>
+    
+        <router-link to="/Logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </router-link>
+    </div>
+            </aside>
         <!------------------- END OF NAV BAR -------------------------- -->
      <main>
             <h1 class="dash-text">Inventory</h1>

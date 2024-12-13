@@ -11,6 +11,48 @@
     </head>
  
         <div class="container">
+            <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="../assets/images/logo cloud.png" alt="logo">
+                        <h2 class="stock_up">Stock Up</h2>
+                    </div>
+                     <div class = "close" id = "close-btn">
+                        <span class="material-icons-sharp">close</span>
+                     </div>
+                </div>
+                <div class="sidebar">
+        <router-link to="/Dashboard" >
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+        </router-link>
+    
+        <router-link to="/Inventory">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Inventory</h3>
+        </router-link>
+    
+        <router-link to="/StockReport" class="active">
+            <span class="material-icons-sharp">bar_chart</span>
+            <h3>Stock Report</h3>
+        </router-link>
+    
+        <router-link to="/LoginTracker">
+            <span class="material-icons-sharp">track_changes</span>
+            <h3>Login Tracker</h3>
+        </router-link>
+    
+        <router-link to="/HelpSupport">
+            <span class="material-icons-sharp">help</span>
+            <h3>Help Support</h3>
+        </router-link>
+    
+        <router-link to="/Logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </router-link>
+    </div>
+            </aside>
             <main>
                     <h1 class="dash-text">Stock Report</h1>
    
