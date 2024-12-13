@@ -32,16 +32,6 @@
                <h3>Inventory</h3>
            </router-link>
        
-           <router-link to="/StockReport">
-               <span class="material-icons-sharp">bar_chart</span>
-               <h3>Stock Report</h3>
-           </router-link>
-       
-           <router-link to="/LoginTracker">
-               <span class="material-icons-sharp">track_changes</span>
-               <h3>Login Tracker</h3>
-           </router-link>
-       
            <router-link to="/HelpSupport" >
                <span class="material-icons-sharp">help</span>
                <h3>Help Support</h3>

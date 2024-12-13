@@ -27,16 +27,6 @@
             <h3>Inventory</h3>
         </router-link>
     
-        <router-link to="/StockReport">
-            <span class="material-icons-sharp">bar_chart</span>
-            <h3>Stock Report</h3>
-        </router-link>
-    
-        <router-link to="/LoginTracker">
-            <span class="material-icons-sharp">track_changes</span>
-            <h3>Login Tracker</h3>
-        </router-link>
-    
         <router-link to="/HelpSupport">
             <span class="material-icons-sharp">help</span>
             <h3>Help Support</h3>
@@ -232,7 +222,7 @@
           <input type="number" v-model="quantity" placeholder="Enter Quantity" min="0">
         </div>
         <div class="button-group">
-          <button class="action-btn" @click="addItem">ADD</button>
+          
           <button class="action-btn" @click="updateItem">UPDATE</button>
           <button class="action-btn" @click="deleteItem">DELETE</button>
           <button class="action-btn" @click="resetForm">RESET</button>
@@ -274,22 +264,6 @@
       this.itemBrand = '';
       this.itemCategory = '';
       this.quantity = 0;
-    },
-    addItem() {
-      console.log('Adding item', this.itemId, this.itemName);  // Debug: Check values being added
-      if (this.itemId && this.itemName && this.itemBrand && this.itemCategory && this.quantity) {
-        this.inventory.push({
-          id: this.itemId,
-          name: this.itemName,
-          brand: this.itemBrand,
-          category: this.itemCategory,
-          quantity: this.quantity
-        });
-        this.resetForm();
-        this.closeModal(); // Close modal after adding
-      } else {
-        alert('Please fill in all fields.');
-      }
     },
     updateItem() {
       const index = this.inventory.findIndex(item => item.id === this.itemId);
@@ -824,6 +798,7 @@
     display: flex;
     gap: 9px;
     justify-content: flex-start;
+    margin-left: 45px;
   }
   
   
