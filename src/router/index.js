@@ -5,6 +5,10 @@ import LoginTracker from '../views/LoginTracker.vue'
 import StockReport from '../views/StockReport.vue'
 import Login from '../views/Login.vue'
 import HelpSupport from '../views/HelpSupport.vue'
+import StaffDashboard from '../views/StaffDashboard.vue'
+import StaffHelpSupport from '../views/StaffHelpSupport.vue'
+import StaffInventory from '../views/StaffInventory.vue'
+
 
 const routes = [
   {
@@ -43,6 +47,24 @@ const routes = [
     component: LoginTracker,
     
     
+  },
+  {
+    path: '/StaffDashboard',
+    name: 'StaffDashboard',
+    component: StaffDashboard,
+
+  },
+  {
+    path: '/StaffHelpSupport',
+    name: 'StaffHelpSupport',
+    component: StaffHelpSupport,
+
+  },
+  {
+    path: '/StaffInventory',
+    name: 'StaffInventory',
+    component: StaffInventory,
+
   },
   {
     path: '/Login',
