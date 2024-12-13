@@ -16,14 +16,14 @@ const routes = [
     path: '/Dashboard',
     name: 'Dashboard',
     component: Dashboard,
-    
+    // meta: { requiresAuth: true } // Only authenticated users can access this
    
   },
   {
     path: '/HelpSupport',
     name: 'HelpSupport',
     component: HelpSupport,
-   
+
   },
   {
     path: '/Inventory',
