@@ -9,238 +9,136 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js"></script> -->
     </head>
-  
+ 
         <div class="container">
-            <aside>
-                <div class="top">
-                    <div class="logo">
-                        <img src="../assets/images/logo cloud.png" alt="logo">
-                        <h2 class="stock_up">Stock Up</h2>
-                    </div>
-                     <div class = "close" id = "close-btn">
-                        <span class="material-icons-sharp">close</span>
-                     </div>
-                </div>
-    
-                <div class="sidebar">
-                    <a href="index.html">
-                        <span class="material-icons-sharp">grid_view</span>
-                        <h3>Dashbord</h3>
-                    </a>
-    
-                    <a href="inventory.html">
-                        <span class="material-icons-sharp">inventory</span>
-                        <h3>Inventory</h3>
-                    </a>
-    
-                    <a href="stockreport.html" class="active">
-                        <span class="material-icons-sharp">bar_chart</span>
-                        <h3>Stock Report</h3>
-                    </a>
-    
-                    <a href="logintracker.html" >
-                        <span class="material-icons-sharp">track_changes</span>
-                        <h3>Login Tracker</h3>
-                    </a>
-    
-                    <a href="help.html" >
-                        <span class="material-icons-sharp">help</span>
-                        <h3>Help Support</h3>
-                    </a>                
-    
-                    <a href="#">
-                        <span class="material-icons-sharp">logout</span>
-                        <h3>Logout</h3>
-                    </a>
-                </div>
-            </aside>
-            <!------------------- END OF NAV BAR -------------------------- -->
             <main>
                     <h1 class="dash-text">Stock Report</h1>
-    
-                <div class="button-container">
-                    <button id="stockReportBtn"><b>STOCK REPORT</b></button>
-                    <button id="inStockBtn"><b>IN STOCK REPORT</b></button>
-                    <button id="lowStockBtn"><b>LOW STOCK REPORT</b></button>
-                </div>
-                
-                <div class="stock-table">
-                    <table id="stockTable">
-                        <thead>
-                            <tr>
-                                <th>Item ID</th>
-                                <th>Item Name</th>
-                                <th>Brand</th>
-                                <th>Category</th>
-                                <th>Current Stock</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr data-stock="150">
-                                <td>001</td>
-                                <td>Whiteboard Marker</td>
-                                <td>Sharpie</td>
-                                <td>Writing Supplies</td>
-                                <td>150</td>
-                                <td>High</td>
-                            </tr>
-                            <tr data-stock="80">
-                                <td>002</td>
-                                <td>Notebook</td>
-                                <td>Classmate</td>
-                                <td>Paper Products</td>
-                                <td>80</td>
-                                <td>High</td>
-                            </tr>
-                            <tr data-stock="50">
-                                <td>003</td>
-                                <td>Glue Stick</td>
-                                <td>Elmers</td>
-                                <td>Arts & Crafts Materials</td>
-                                <td>50</td>
-                                <td>Average</td>
-                            </tr>
-                            <tr data-stock="200">
-                                <td>004</td>
-                                <td>Pencil</td>
-                                <td>Faber-Castell</td>
-                                <td>Writing Supplies</td>
-                                <td>200</td>
-                                <td>High</td>
-                            </tr>
-                            <tr data-stock="25">
-                                <td>005</td>
-                                <td>Binder Clips</td>
-                                <td>PaperPro</td>
-                                <td>Organizational Tools</td>
-                                <td>25</td>
-                                <td>Low</td>
-                            </tr>
-                        </tbody>            
-                    </table>
-                </div>
-    
-                <div class="download-buttons">
-                    <button onclick="downloadExcel()">Download Excel</button>
-                    <button onclick="downloadPDF()">Download PDF</button>
-                </div>
-            </main>
-        </div>
-        <!-- <script>
-            const stockData = [
-                { id: '001', name: 'Whiteboard Marker', brand: 'Sharpie', category: 'Writing Supplies', stock: 150, status: 'High' },
-                { id: '002', name: 'Notebook', brand: 'Classmate', category: 'Paper Products', stock: 80, status: 'High' },
-                { id: '003', name: 'Glue Stick', brand: 'Elmers', category: 'Arts & Crafts Materials', stock: 50, status: 'Average' },
-                { id: '004', name: 'Pencil', brand: 'Faber-Castell', category: 'Writing Supplies', stock: 200, status: 'High' },
-                { id: '005', name: 'Binder Clips', brand: 'PaperPro', category: 'Organizational Tools', stock: 25, status: 'Low' }
-            ];
-        
-            let currentReportType = "Stock Report"; 
-        
-            document.getElementById('stockReportBtn').addEventListener('click', function() {
-                currentReportType = "Stock Report"; 
-                displayStockReport(stockData.sort((a, b) => b.stock - a.stock));
-            });
-        
-            document.getElementById('inStockBtn').addEventListener('click', function() {
-                currentReportType = "In Stock Report"; 
-                const inStockItems = stockData.filter(item => item.status === 'High' || item.status === 'Average');
-                inStockItems.sort((a, b) => b.stock - a.stock);
-                displayStockReport(inStockItems);
-            });
-        
-            document.getElementById('lowStockBtn').addEventListener('click', function() {
-                currentReportType = "Low Stock Report";
-                const lowStockItems = stockData.filter(item => item.status === 'Low');
-                displayStockReport(lowStockItems);
-            });
-        
-            function displayStockReport(items) {
-                const tbody = document.querySelector('#stockTable tbody');
-                tbody.innerHTML = ''; 
-                items.forEach(item => {
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
-                        <td>${item.id}</td>
-                        <td>${item.name}</td>
-                        <td>${item.brand}</td>
-                        <td>${item.category}</td>
-                        <td>${item.stock}</td>
-                        <td>${item.status}</td>
-                    `;
-                    tbody.appendChild(row);
-                });
-            }
-        
-            function downloadExcel() {
-        const table = document.querySelector("#stockTable"); 
-        if (!table) {
+   
+<div>
+    <div class="button-container">
+      <button @click="showStockReport"><b>STOCK REPORT</b></button>
+      <button @click="showInStockReport"><b>IN STOCK REPORT</b></button>
+      <button @click="showLowStockReport"><b>LOW STOCK REPORT</b></button>
+    </div>
+
+
+    <div class="stock-table">
+      <table id="stockTable">
+        <thead>
+          <tr>
+            <th>Item ID</th>
+            <th>Item Name</th>
+            <th>Brand</th>
+            <th>Category</th>
+            <th>Current Stock</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in displayedStockData" :key="item.id">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.brand }}</td>
+            <td>{{ item.category }}</td>
+            <td>{{ item.stock }}</td>
+            <td>{{ item.status }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="download-buttons">
+      <button @click="downloadExcel">Download Excel</button>
+      <button @click="downloadPDF">Download PDF</button>
+    </div>
+</div>
+</main>
+  </div>
+    </template>
+   
+    <script>
+    import * as XLSX from 'xlsx';
+    import jsPDF from 'jspdf';
+    import 'jspdf-autotable';
+   
+    export default {
+      data() {
+        return {
+          stockData: [
+            { id: '001', name: 'Whiteboard Marker', brand: 'Sharpie', category: 'Writing Supplies', stock: 150, status: 'High' },
+            { id: '002', name: 'Notebook', brand: 'Classmate', category: 'Paper Products', stock: 80, status: 'High' },
+            { id: '003', name: 'Glue Stick', brand: 'Elmers', category: 'Arts & Crafts Materials', stock: 50, status: 'Average' },
+            { id: '004', name: 'Pencil', brand: 'Faber-Castell', category: 'Writing Supplies', stock: 200, status: 'High' },
+            { id: '005', name: 'Binder Clips', brand: 'PaperPro', category: 'Organizational Tools', stock: 25, status: 'Low' }
+          ],
+          displayedStockData: []
+        };
+      },
+      mounted() {
+        this.showStockReport(); // Show the full stock report by default
+      },
+      methods: {
+        showStockReport() {
+          this.displayedStockData = this.stockData;
+        },
+        showInStockReport() {
+          this.displayedStockData = this.stockData.filter(item => item.status === 'High' || item.status === 'Average');
+        },
+        showLowStockReport() {
+          this.displayedStockData = this.stockData.filter(item => item.status === 'Low');
+        },
+        downloadExcel() {
+          const table = document.querySelector("#stockTable");
+          if (!table) {
             console.error("Table not found!");
             return;
-        }
-    
-        const workbook = XLSX.utils.table_to_book(table, { sheet: "Stock Report" });
-    
-        const fileName = StockReport_${new Date().toLocaleDateString().replace(/\//g, '-')}_${formatTime(new Date())}.xlsx;
-        console.log("Generating Excel file:", fileName);
-    
-        XLSX.writeFile(workbook, fileName);
-    }
-        
-        
-    function downloadPDF() {
-        const { jsPDF } = window.jspdf;
-        const doc = new jsPDF();
-    
-        const logo = new Image();
-        logo.src = 'img/logo.png'; 
-    
-        logo.onload = function() {
-            doc.addImage(logo, 'PNG', 10, 10, 30, 30); 
-            doc.setFontSize(14);
-            doc.text("Stock Up", 50, 20); 
-            doc.text(Report Type: ${currentReportType}, 50, 30); 
-            doc.text(Date: ${new Date().toLocaleDateString()} ${formatTime(new Date())}, 50, 40); 
-    
-            doc.autoTable({ html: "#stockTable", startY: 60 });
-            const fileName = StockReport_${new Date().toLocaleDateString().replace(/\//g, '-')}_${formatTime(new Date())}.pdf;
-            doc.save(fileName);
-        };
-    
-        logo.onerror = function() {
-            console.error('Failed to load logo image.');
-            doc.setFontSize(14);
-            doc.text("Stock Up", 10, 10); 
-            doc.text(Report Type: ${currentReportType}, 10, 20); 
-            doc.text(Date: ${new Date().toLocaleDateString()} ${formatTime(new Date())}, 10, 30); 
-    
-            doc.autoTable({ html: "#stockTable", startY: 40 });
-            const fileName = StockReport_${new Date().toLocaleDateString().replace(/\//g, '-')}_${formatTime(new Date())}.pdf;
-            doc.save(fileName);
-        };
-    }
-        
-            function formatTime(date) {
-                const hours = date.getHours();
-                const minutes = date.getMinutes();
-                const ampm = hours >= 12 ? 'pm' : 'am';
-                return ${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${ampm};
-            }
-        </script> -->
-    
+          }
    
-    </template> 
-    
-    <script>
-    
+          const workbook = XLSX.utils.table_to_book(table, { sheet: "Stock Report" });
+          const fileName = `StockReport_${new Date().toLocaleDateString().replace(/\//g, '-')}_${this.formatTime(new Date())}.xlsx`;
+          console.log("Generating Excel file:", fileName);
+          XLSX.writeFile(workbook, fileName);
+        },
+        downloadPDF() {
+          const doc = new jsPDF();
+          const logo = new Image();
+          logo.src = '../assets/images/logo.png'; // Adjust the path as necessary
+   
+          logo.onload = () => {
+            doc.addImage(logo, 'PNG', 10, 10, 30, 30);
+            this.addPDFContent(doc);
+          };
+   
+          logo.onerror = () => {
+            console.error('Failed to load logo image.');
+            this.addPDFContent(doc);
+          };
+        },
+        addPDFContent(doc) {
+          doc.setFontSize(14);
+          doc.text("Stock Up", 50, 20);
+          doc.text(`Date: ${new Date().toLocaleDateString()} ${this.formatTime(new Date())}`, 50, 30);
+          doc.autoTable({ html: "#stockTable", startY: 60 });
+          const fileName = `StockReport_${new Date().toLocaleDateString().replace(/\//g, '-')}_${this.formatTime(new Date())}.pdf`;
+          doc.save(fileName);
+        },
+        formatTime(date) {
+          const hours = date.getHours();
+          const minutes = date.getMinutes();
+          const ampm = hours >= 12 ? 'pm' : 'am';
+          return `${hours % 12 || 12}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+        }
+      }
+    };
     </script>
-    
+   
+   
     <style scoped>
           @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-    
+   
     * {
-        margin: 0; 
+        margin: 0;
         padding: 0;
         outline: 0;
         appearance: none;
@@ -249,11 +147,11 @@
         list-style: none;
         box-sizing: border-box;
     }
-    
+   
     html {
-         font-size:14px; 
+         font-size:14px;
     }
-    
+   
     body {
         background: url(../assets/images/back.png) ;
         width: 100vw;
@@ -261,11 +159,11 @@
         font-family: poppins, sans-serif;
         font-size: 0.88rem;
         background-color: rgb(160, 173, 237);
-        user-select: none; 
+        user-select: none;
         overflow-x:hidden;  
         color: #363949;
     }
-    
+   
     .container {
         display: grid;
         width: calc(100% - 14rem); /* Adjust the width to account for the sidebar */
@@ -273,46 +171,46 @@
         gap: 1.8rem;
         grid-template-columns: auto; /* Change to a single column layout */
     }
-    
+   
     a{
         color: #363636;
     }
-    
+   
     img {
         display: block;
         width: 100%;
     }
-    
-    h1{ 
+   
+    h1{
         font-weight: 800;
         font-size: 1.8rem;
     }
-    
-    h2{ 
+   
+    h2{
         font-size: 1.4rem;
     }
-    
+   
     h3{
         font-size: 0.87rem;
     }
-    
+   
     /* .text-muted{
-        color: 
+        color:
         .;lvvvvl#7d8da1;
     } */
-    
+   
     h4{
         font-size: 0.87;
     }
-    
+   
     p{
         color: #677483;
     }
-    
+   
     b{
         color: #677483;
     }
-    
+   
     aside{
         height: 100vh;  
         background-color: white;
@@ -322,7 +220,7 @@
         width: 14rem; /* Set a specific width for the sidebar */
         z-index: 10; /* Ensure it is above other content */
     }
-    
+   
     aside .top{
         display: flex;
         align-items: center;
@@ -330,12 +228,12 @@
         margin-top: 1.4rem;
         margin-left:2rem ;
     }
-    
+   
     /* aside .logo img {
         width: 150px; this if for the img logo
      */
      
-    
+   
     aside .logo {
         display:flex;
         gap:0.8rem;
@@ -346,28 +244,28 @@
         width: 2rem;
         height: 2rem;
      }
-    
+   
      aside .close{
         display: none;
      }
-    
+   
      /* ===============side bar ============ */
-    
+   
      aside .sidebar{
         /* background-color: white; */
         background:white;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         height: 86vh;
         position: relative;
         top: 3rem;
      }
-    
+   
      aside h3 {
         font-weight: 500;
-    
+   
      }
-    
+   
      aside .sidebar a {
         display: flex;
         color: #677483;
@@ -377,115 +275,113 @@
         position: relative;
         height: 3.7rem;
         transition:  all 300ms ease;
-    
+   
      }
      /* ============ */
-     aside .sidebar a span { 
+     aside .sidebar a span {
         transition: all 300ms ease;
      }
-    
-    
-     aside .sidebar a span{ 
+   
+   
+     aside .sidebar a span{
         font-size: 1.6rem;
-        transition: all 300ms ease; 
+        transition: all 300ms ease;
      }
-    
+   
     aside .sidebar a:last-child{
         position: absolute;
         bottom: 2rem;
         width: 100% ;
     }
-    
+   
     aside .sidebar a.active {
         background: aqua;
         color: blue;
         margin-left: 0;
     }
-    
+   
     aside .sidebar a.active:before{
         content: '';
-        width: 6px; 
+        width: 6px;
         height: 100%;
         background: blue;
     }
-    
+   
     aside .sidebar a.active span{
         color: blue;
         margin-left: calc(1rem - 3px);
     }
-    
+   
     aside .sidebar a:hover{
         color: var(#f74d4d)
     }
-    
+   
     aside .sidebar a:hover span {
      margin-left: 1rem;
     }
-    
-    
-    
+   
+   
+   
     /* Main Content */
-    main{ 
+    main{
         margin-top: 2rem;
     }
-    
+   
     main .dash-text {
         position: absolute;
         top: 2rem;
         left: 17rem;
         color: black;
     }
-    
-    
+   
+   
     main b{
         color: white;
     }
-    
+   
      /* STOCK TABLE */
      .stock-table {
-      position: absolute;
-      top: 11rem;
-      left: 17rem; /* Adjusted left margin to account for the sidebar */
-      transform: translateX(0); /* Removed translateX(-50%) */
-      width: 81%; /* Reduced width to 60% */
-      margin-top: 0;
-      z-index: 1;
-      background-color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
+    position: absolute;
+    top: 10rem;
+    width: 85rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    left: 17rem;
+}
+   
     .stock-table table {
       width: 100%;
-      border-collapse: collapse; 
+      border-collapse: collapse;
     }
-    
+   
     .stock-table th {
-      background-color: #363636; 
-      color: white; 
+      background-color: #363636;
+      color: white;
       padding: 1rem;
-      text-align: left; 
+      text-align: left;
       font-size: 1rem;
-      border-bottom: 2px solid #ddd; 
+      border-bottom: 2px solid #ddd;
     }
-    
+   
     .stock-table td {
       padding: 1rem;
       font-size: 1rem;
-      border-bottom: 1px solid #ddd; 
+      border-bottom: 1px solid #ddd;
     }
-    
+   
     .stock-table td:last-child {
       font-weight: bold;
-      color: #2596be; 
+      color: #2596be;
     }
-    
+   
     .stock-table tr:hover {
-      background-color: #f0f0f0; 
+      background-color: #f0f0f0;
     }      
     /* END OF STOCK TABLE */
-    
+   
             /* Button Styles */
             .button-container {
       position: absolute;
@@ -508,12 +404,12 @@
                 cursor: pointer;
                 transition: all 0.3s ease;
             }
-    
+   
             button:hover {
                 background-color: #00ffff;
                 color: #0000ff;
             }
-    
+   
             /* Bottom Buttons */
             .download-buttons {
                 position: fixed;
@@ -522,7 +418,7 @@
                 display: flex;
                 gap: 10px;
             }
-    
+   
             .download-buttons button {
                 background-color: #363636;
                 color: white;
@@ -530,9 +426,91 @@
                 padding: 1rem 2rem;
                 transition: all 0.3s ease;
             }
-    
+   
             .download-buttons button:hover {
                 background-color: #00ffff;
                 color: #0000ff;
             }
-        </style>
+
+
+       
+/* Media Queries for Responsiveness */
+
+
+@media (max-width: 1300px) {
+
+
+.container {
+    width: 100%;
+    margin-left: 0;
+}
+
+
+.button-container {
+    position:fixed;
+    left: 17rem;
+  }
+
+
+
+
+.stock-table {
+    width: 85%;
+    left: 9rem;
+    top: 12rem;
+}
+.download-buttons{
+right:2rem;
+}
+}
+@media (max-width: 768px) {
+
+
+.container {
+    width: 100%;
+    margin-left: 0;
+}
+
+
+.stock-table {
+    width: 85%;
+    left: 6%;
+    top: 12rem;
+}
+
+
+.button-container {
+    align-items: center;
+  }
+  .download-buttons{
+right:2rem;
+}
+}
+
+
+@media (max-width: 480px) {
+
+
+    .stock-table {
+    width: 85%;
+    left: 1rem;
+    top: 12rem;
+    position: relative;
+}
+.button-container {
+    align-items: center;
+
+
+  }
+.download-buttons{
+right:2rem;
+}
+}
+
+
+
+
+
+
+</style>
+
