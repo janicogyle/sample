@@ -22,17 +22,17 @@
                         </div>
                    </div>
                    <div class="sidebar">
-           <router-link to="/Dashboard" class=" active">
+           <router-link to="/StaffDashboard" class=" active">
                <span class="material-icons-sharp">grid_view</span>
                <h3>Dashboard</h3>
            </router-link>
        
-           <router-link to="/Inventory">
+           <router-link to="/StaffInventory">
                <span class="material-icons-sharp">inventory</span>
                <h3>Inventory</h3>
            </router-link>
        
-           <router-link to="/HelpSupport" >
+           <router-link to="/StaffHelpSupport" >
                <span class="material-icons-sharp">help</span>
                <h3>Help Support</h3>
            </router-link>
