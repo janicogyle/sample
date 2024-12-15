@@ -2,7 +2,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Help Center</title>
+        <title>Inventory</title>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     </head>    
@@ -234,7 +234,7 @@
   
   
   <script>
-  export default {
+export default {
   data() {
     return {
       modalVisible: false, // Modal visibility control
@@ -244,18 +244,55 @@
       itemCategory: '',
       quantity: 0,
       inventory: [
-        { id: '001', name: 'Notebook', brand: 'Brand A', category: 'Writing Supplies', quantity: 50 },
-        { id: '002', name: 'Pen', brand: 'Brand B', category: 'Writing Supplies', quantity: 150 },
-      ]
+        { id: '001', name: 'Notebook', brand: 'Brand X', category: 'Paper Products', quantity: 50 },
+        { id: '002', name: 'Pen', brand: 'Brand Y', category: 'Writing Supplies', quantity: 150 },
+        { id: '003', name: 'Markers', brand: 'Brand Z', category: 'Arts & Crafts Materials', quantity: 30 },
+        { id: '004', name: 'Scissors', brand: 'Brand A', category: 'Arts & Crafts Materials', quantity: 70 },
+        { id: '005', name: 'Sticky Notes', brand: 'Brand B', category: 'Organizational Tools', quantity: 120 },
+        { id: '006', name: 'Glue Stick', brand: 'Brand C', category: 'Arts & Crafts Materials', quantity: 20 },
+        { id: '007', name: 'Printer Paper', brand: 'Brand D', category: 'Paper Products', quantity: 90 },
+        { id: '008', name: 'Highlighter', brand: 'Brand E', category: 'Writing Supplies', quantity: 40 },
+        { id: '009', name: 'File Folder', brand: 'Brand F', category: 'Organizational Tools', quantity: 60 },
+        { id: '010', name: 'Calculator', brand: 'Brand G', category: 'Miscellaneous', quantity: 85 },
+      ],
+      sortKey: '',
+      sortOrder: '',
+      selectedCategory: ''
     };
+  },
+  computed: {
+    sortedInventory() {
+      let sorted = [...this.inventory];
+
+      // Sort by name
+      if (this.sortKey === 'name') {
+        sorted.sort((a, b) => {
+          return this.sortOrder === 'asc'
+            ? a.name.localeCompare(b.name)
+            : b.name.localeCompare(a.name);
+        });
+      }
+
+      // Sort by quantity
+      else if (this.sortKey === 'quantity') {
+        sorted.sort((a, b) => {
+          return this.sortOrder === 'asc' ? a.quantity - b.quantity : b.quantity - a.quantity;
+        });
+      }
+
+      // Filter by category
+      if (this.selectedCategory) {
+        sorted = sorted.filter(item => item.category === this.selectedCategory);
+      }
+
+      return sorted;
+    }
   },
   methods: {
     openModal() {
-      console.log('Opening Modal');  // Debug: Check if openModal() is triggered
       this.modalVisible = true;  // Set modal to visible
     },
     closeModal() {
-      console.log('Closing Modal');  // Debug: Check if closeModal() is triggered
       this.modalVisible = false;  // Set modal to hidden
     },
     resetForm() {
@@ -290,11 +327,21 @@
       } else {
         alert('Item not found.');
       }
+    },
+    sortInventory(key, order) {
+      if (key === 'category') {
+        this.selectedCategory = order; // Set selected category for filtering
+        this.sortKey = ''; // Reset sort key
+        this.sortOrder = ''; // Reset sort order
+      } else {
+        this.sortKey = key; // Set sort key
+        this.sortOrder = order; // Set sort order
+        this.selectedCategory = ''; // Reset selected category
+      }
     }
   }
-  };
-  </script>
-  
+};
+</script>
   
   <style scoped>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
