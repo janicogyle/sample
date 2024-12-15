@@ -176,6 +176,7 @@
       overflow: hidden;
       margin-left: 280px;
       margin-bottom: 1000px;
+      margin-top: 4rem;
       position: fixed;
   }
   
