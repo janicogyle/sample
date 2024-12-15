@@ -89,20 +89,29 @@
       </table>
     </div>
 
+   
 
     <div class="download-buttons">
       <button @click="downloadExcel">Download Excel</button>
       <button @click="downloadPDF">Download PDF</button>
     </div>
 </div>
+
+<div class = "right">
+        <div class= "top">
+            <button id ="menu-btn">
+                <span class="material-icons-sharp">menu</span>
+            </button>
+        </div>
+    </div>
 </main>
   </div>
     </template>
    
     <script>
-    import * as XLSX from 'xlsx';
     import jsPDF from 'jspdf';
-    import 'jspdf-autotable';
+import 'jspdf-autotable';
+import * as XLSX from 'xlsx';
    
     export default {
       data() {
@@ -110,7 +119,7 @@
           stockData: [
             { id: '001', name: 'Whiteboard Marker', brand: 'Sharpie', category: 'Writing Supplies', stock: 150, status: 'High' },
             { id: '002', name: 'Notebook', brand: 'Classmate', category: 'Paper Products', stock: 80, status: 'High' },
-            { id: '003', name: 'Glue Stick', brand: 'Elmers', category: 'Arts & Crafts Materials', stock: 50, status: 'Average' },
+            { id: '003', name: 'Glue Stick', brand: 'Elmers', category: 'Arts & Crafts Materials', stock: 20, status: 'Low' },
             { id: '004', name: 'Pencil', brand: 'Faber-Castell', category: 'Writing Supplies', stock: 200, status: 'High' },
             { id: '005', name: 'Binder Clips', brand: 'PaperPro', category: 'Organizational Tools', stock: 25, status: 'Low' }
           ],
@@ -253,116 +262,107 @@
         color: #677483;
     }
    
-    aside{
-        height: 100vh;  
-        background-color: white;
-        position: fixed; /* Fix the sidebar to the left */
-        left: 0; /* Position it to the left */
-        top: 0; /* Align it to the top */
-        width: 14rem; /* Set a specific width for the sidebar */
-        z-index: 10; /* Ensure it is above other content */
-    }
-   
-    aside .top{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-top: 1.4rem;
-        margin-left:2rem ;
-    }
-   
-    /* aside .logo img {
-        width: 150px; this if for the img logo
-     */
-     
-   
-    aside .logo {
-        display:flex;
-        gap:0.8rem;
-        position: relative;
-       
-    }
-     aside .logo img {
-        width: 2rem;
-        height: 2rem;
-     }
-   
-     aside .close{
-        display: none;
-     }
-   
-     /* ===============side bar ============ */
-   
-     aside .sidebar{
-        /* background-color: white; */
-        background:white;
-        display: flex;
-        flex-direction: column;
-        height: 86vh;
-        position: relative;
-        top: 3rem;
-     }
-   
-     aside h3 {
-        font-weight: 500;
-   
-     }
-   
-     aside .sidebar a {
-        display: flex;
-        color: #677483;
-        margin-left: 2rem;
-        gap: 1rem;
-        align-items: center;
-        position: relative;
-        height: 3.7rem;
-        transition:  all 300ms ease;
-   
-     }
-     /* ============ */
-     aside .sidebar a span {
-        transition: all 300ms ease;
-     }
-   
-   
-     aside .sidebar a span{
-        font-size: 1.6rem;
-        transition: all 300ms ease;
-     }
-   
-    aside .sidebar a:last-child{
-        position: absolute;
-        bottom: 2rem;
-        width: 100% ;
-    }
-   
-    aside .sidebar a.active {
-        background: aqua;
-        color: blue;
-        margin-left: 0;
-    }
-   
-    aside .sidebar a.active:before{
-        content: '';
-        width: 6px;
-        height: 100%;
-        background: blue;
-    }
-   
-    aside .sidebar a.active span{
-        color: blue;
-        margin-left: calc(1rem - 3px);
-    }
-   
-    aside .sidebar a:hover{
-        color: var(#f74d4d)
-    }
-   
-    aside .sidebar a:hover span {
-     margin-left: 1rem;
-    }
-   
-   
+    side {
+    height: 100vh;  
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 14rem;
+    z-index: 10;
+}
+
+
+aside .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    margin-left: 2rem;
+}
+
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
+    position: relative;
+}
+
+
+aside .logo img {
+    width: 2rem;
+    height: 2rem;
+}
+
+
+aside .close {
+    display: none;
+}
+
+
+aside .sidebar {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+}
+
+
+aside h3 {
+    font-weight: 500;
+}
+
+
+aside .sidebar a {
+    display: flex;
+    color: #677483;
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition: all 300ms ease;
+}
+
+
+aside .sidebar a span {
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+}
+
+
+aside .sidebar a:last-child {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+
+aside .sidebar a.active {
+    background: aqua;
+    color: blue;
+    margin-left: 0;
+}
+
+
+aside .sidebar a.active:before {
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: blue;
+}
+
+
+aside .sidebar a:hover {
+    color: var(#f74d4d);
+}
+
+
+aside .sidebar a:hover span {
+    margin-left: 1rem;
+}
    
     /* Main Content */
     main{
@@ -385,7 +385,7 @@
      .stock-table {
     position: absolute;
     top: 10rem;
-    width: 85rem;
+    width: 80%;
     padding: 1rem;
     background-color: white;
     border-radius: 8px;
@@ -479,43 +479,69 @@
 /* Media Queries for Responsiveness */
 
 
-@media (max-width: 1300px) {
-
+@media (max-width: 1200px) {
 
 .container {
-    width: 100%;
-    margin-left: 0;
+    width: 94%;
+    grid-template-columns: 5rem auto;
 }
+
+aside {
+        position: fixed;
+        width: 6rem;
+    }
+
+    aside .logo h2 {
+        display: none;
+    }
+
+    aside .sidebar h3 {
+        display: none;
+    }
+
+    aside .sidebar a {
+        width: 5.6rem;
+    }
+
+    aside .sidebar a:last-child {
+        position: absolute;
+        bottom: 0px;
+    }
+
+    
 
 
 .button-container {
     position:fixed;
-    left: 17rem;
+    margin-left: -29.4rem;
   }
 
 
-
-
 .stock-table {
-    width: 85%;
+    width: 97%;
     left: 9rem;
     top: 12rem;
 }
 .download-buttons{
 right:2rem;
 }
+
+.product-table {
+  margin-right: 2rem;
 }
-@media (max-width: 768px) {
-
-
+}
+@media screen  and (max-width: 768px) {
 .container {
     width: 100%;
     margin-left: 0;
 }
 
+main .dash-text{
+  left:2rem
+}
 
 .stock-table {
-    width: 85%;
+    width: auto;
     left: 6%;
     top: 12rem;
 }
@@ -523,36 +549,12 @@ right:2rem;
 
 .button-container {
     align-items: center;
+    margin-left: -43rem;
   }
   .download-buttons{
 right:2rem;
 }
 }
-
-
-@media (max-width: 480px) {
-
-
-    .stock-table {
-    width: 85%;
-    left: 1rem;
-    top: 12rem;
-    position: relative;
-}
-.button-container {
-    align-items: center;
-
-
-  }
-.download-buttons{
-right:2rem;
-}
-}
-
-
-
-
-
 
 </style>
 
