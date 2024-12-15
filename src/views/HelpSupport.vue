@@ -10,49 +10,90 @@
     </head>
         <div class="container">
            
-            <aside>
-                <div class="top">
-                    <div class="logo">
-                        <img src="../assets/images/logo cloud.png" alt="logo">
-                        <h2 class="stock_up">Stock Up</h2>
-                    </div>
-                     <div class = "close" id = "close-btn">
-                        <span class="material-icons-sharp">close</span>
-                     </div>
-                </div>
-                <div class="sidebar">
-        <router-link to="/Dashboard" >
-            <span class="material-icons-sharp">grid_view</span>
-            <h3>Dashboard</h3>
-        </router-link>
-    
-        <router-link to="/Inventory">
-            <span class="material-icons-sharp">inventory</span>
-            <h3>Inventory</h3>
-        </router-link>
-    
-        <router-link to="/StockReport">
-            <span class="material-icons-sharp">bar_chart</span>
-            <h3>Stock Report</h3>
-        </router-link>
-    
-        <router-link to="/LoginTracker">
-            <span class="material-icons-sharp">track_changes</span>
-            <h3>Login Tracker</h3>
-        </router-link>
-    
-        <router-link to="/HelpSupport" class=" active">
-            <span class="material-icons-sharp">help</span>
-            <h3>Help Support</h3>
-        </router-link>
-    
-        <router-link to="/Logout">
-            <span class="material-icons-sharp">logout</span>
-            <h3>Logout</h3>
-        </router-link>
+          <aside :class="{ show: isMenuVisible }">
+
+<div class="top">
+
+    <div class="logo">
+
+        <img src="../assets/images/logo cloud.png" alt="logo">
+
+        <h2 class="stock_up">Stock Up</h2>
+
     </div>
-            </aside>
-           
+
+     <div class = "close" id = "close-btn" @click="toggleMenu">
+
+        <span class="material-icons-sharp">close</span>
+
+     </div>
+
+</div>
+
+<div class="sidebar">
+
+<router-link to="/Dashboard">
+
+<span class="material-icons-sharp">grid_view</span>
+
+<h3>Dashboard</h3>
+
+</router-link>
+
+
+
+<router-link to="/Inventory">
+
+<span class="material-icons-sharp">inventory</span>
+
+<h3>Inventory</h3>
+
+</router-link>
+
+
+
+<router-link to="/StockReport">
+
+<span class="material-icons-sharp">bar_chart</span>
+
+<h3>Stock Report</h3>
+
+</router-link>
+
+
+
+<router-link to="/LoginTracker">
+
+<span class="material-icons-sharp">track_changes</span>
+
+<h3>Login Tracker</h3>
+
+</router-link>
+
+
+
+<router-link to="/HelpSupport" class=" active" >
+
+<span class="material-icons-sharp">help</span>
+
+<h3>Help Support</h3>
+
+</router-link>
+
+
+
+<router-link to="/Logout">
+
+<span class="material-icons-sharp">logout</span>
+
+<h3>Logout</h3>
+
+</router-link>
+
+</div>
+
+</aside>
+
            
                 <div class="main-content">
                     <h1 class="dash-text">Help Center</h1>
@@ -318,62 +359,60 @@ export default {
         color: #677483;
     }
    
-    aside{
+    aside {
     height: 100vh;  
     background-color: white;
-    position: fixed; /* Fix the sidebar to the left */
-    left: 0; /* Position it to the left */
-    top: 0; /* Align it to the top */
-    width: 14rem; /* Set a specific width for the sidebar */
-    z-index: 10; /* Ensure it is above other content */
-    }
-   
-    aside .top{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 14rem;
+    z-index: 10;
+}
+
+
+aside .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 1.4rem;
-    margin-left:2rem ;
-    }
-   
-    /* aside .logo img {
-    width: 150px; this if for the img logo
-    */
-   
-   
-    aside .logo {
-    display:flex;
-    gap:0.8rem;
+    margin-left: 2rem;
+}
+
+
+aside .logo {
+    display: flex;
+    gap: 0.8rem;
     position: relative;
-   
-    }
-    aside .logo img {
+}
+
+
+aside .logo img {
     width: 2rem;
     height: 2rem;
-    }
-   
-    aside .close{
+}
+
+
+aside .close {
     display: none;
-    }
-   
-    /* ===============side bar ============ */
-   
-    aside .sidebar{
-    /* background-color: white; */
-    background:white;
+}
+
+
+aside .sidebar {
+    background: white;
     display: flex;
     flex-direction: column;
     height: 86vh;
     position: relative;
     top: 3rem;
-    }
-   
-    aside h3 {
+}
+
+
+aside h3 {
     font-weight: 500;
-   
-    }
-   
-    aside .sidebar a {
+}
+
+
+aside .sidebar a {
     display: flex;
     color: #677483;
     margin-left: 2rem;
@@ -381,51 +420,46 @@ export default {
     align-items: center;
     position: relative;
     height: 3.7rem;
-    transition:  all 300ms ease;
-   
-    }
-    /* ============ */
-    aside .sidebar a span {
     transition: all 300ms ease;
-    }
-   
-   
-    aside .sidebar a span{
+}
+
+
+aside .sidebar a span {
     font-size: 1.6rem;
     transition: all 300ms ease;
-    }
-   
-    aside .sidebar a:last-child{
+}
+
+
+aside .sidebar a:last-child {
     position: absolute;
     bottom: 2rem;
-    width: 100% ;
-    }
-   
-    aside .sidebar a.active {
+    width: 100%;
+}
+
+
+aside .sidebar a.active {
     background: aqua;
     color: blue;
     margin-left: 0;
-    }
-   
-    aside .sidebar a.active:before{
+}
+
+
+aside .sidebar a.active:before {
     content: '';
     width: 6px;
     height: 100%;
     background: blue;
-    }
-   
-    aside .sidebar a.active span{
-    color: blue;
-    margin-left: calc(1rem - 3px);
-    }
-   
-    aside .sidebar a:hover{
-    color: var(#f74d4d)
-    }
-   
-    aside .sidebar a:hover span {
+}
+
+
+aside .sidebar a:hover {
+    color: var(#f74d4d);
+}
+
+
+aside .sidebar a:hover span {
     margin-left: 1rem;
-    }
+}
    
  
    
@@ -701,6 +735,8 @@ body {
 }
 
 
+
+
 .about, .qrg-wrapper, .faq-wrapper, .contact-form {
     width: 90%; /* Adjust width for mobile */
     margin: 0 auto; /* No margin for very close spacing */
@@ -724,8 +760,6 @@ h1, h2, h3 {
     font-size: 0.9rem;
 }
     @media (max-width: 768px) {
-
-
         .main-content .dash-text {
         font-size: 2rem;
     }
@@ -763,6 +797,8 @@ h1, h2, h3 {
         font-size: 0.9rem;
     }
 }
+
+
 
 
 @media (max-width: 480px) {
