@@ -1,1549 +1,781 @@
 <template>
 
+
     <head>
-
-       <meta charset="UTF-8">
-
-       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-       <title>Dashboard</title>
-
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp "
-
-       rel="stylesheet"> 
-
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-
-     rel="stylesheet">
-
-         <!-- style sheet eme -->
-
-       <link rel="stylesheet" href="style.css">
-
-   </head>
-
-   <div class="container">
-
-    <aside>
-                   <div class="top">
-                       <div class="logo">
-                           <img src="../assets/images/logo cloud.png" alt="logo">
-                           <h2 class="stock_up">Stock Up</h2>
-                       </div>
-                        <div class = "close" id = "close-btn">
-                           <span class="material-icons-sharp">close</span>
-                        </div>
-                   </div>
-                   <div class="sidebar">
-           <router-link to="/StaffDashboard" class=" active">
-               <span class="material-icons-sharp">grid_view</span>
-               <h3>Dashboard</h3>
-           </router-link>
-       
-           <router-link to="/StaffInventory">
-               <span class="material-icons-sharp">inventory</span>
-               <h3>Inventory</h3>
-           </router-link>
-       
-           <router-link to="/StaffHelpSupport" >
-               <span class="material-icons-sharp">help</span>
-               <h3>Help Support</h3>
-           </router-link>
-       
-           <router-link to="/Logout">
-               <span class="material-icons-sharp">logout</span>
-               <h3>Logout</h3>
-           </router-link>
-       </div>
-               </aside>
-
-   <main>
-
-             <h1 class="dash-text">Dashboard</h1>
-
-              <div class="date">
-
-                <input type="date">
-
-              </div>
-
-   
-
-           <div class="insights">
-
-               <div class="sales">
-
-                     <span class="material-icons-sharp"> analytics </span>
-
-                   <div class="middle">
-
-                       <div class="left">
-
-                           <h3>Total Stocks</h3>
-
-                           <h2>800 stocks</h2>
-
-                       </div>
-
-                   </div>
-
-               </div>
-
-               <!-- end of ka emehan sales track -->
-
-   
-
-               <!-- start of income  -->
-
-               <div class="expenses">
-
-                   <span class="material-icons">trending_up</span>   
-
-                 <div class="middle">
-
-                     <div class="left">
-
-                         <h3>Total High Stocks</h3>
-
-                         <h2>400 stocks</h2>
-
-                     </div>   
-
-                 </div>
-
-                 
-
-             </div>
-
-   
-
-             <!-- 2nd card total stocks -->
-
-   
-
-             <div class="income">
-
-               <span class="material-icons"> trending_down</span>
-
-             <div class="middle">
-
-                 <div class="left">
-
-                     <h3>Total Low Stock</h3>
-
-                     <h2>400 stocks </h2>
-
-                 </div>
-
-             </div>
-
-         </div>
-
-   
-
-         <!-- 3nd card INCOME  -->
-
-   </div>
-
-       <!--   INVENTORY TRACKER  -->
-
-       <div class="recent-orders">
-
-           <h2> Inventory</h2>
-
-           <table>
-
-               <thead>
-
-                   <tr>
-
-                       <th>Product Id</th>
-
-                       <th>Product</th>
-
-                       <th>Category</th>
-
-                       <th>Quantity</th>
-
-                       <th>Status</th>
-
-                </tr>
-
-            </thead>
-
-           <tbody>
-
-               <tr>
-
-                   <td>101</td>
-
-                   <td>Pencil</td>
-
-                   <td>Writing Supply</td>
-
-                   <td>11</td>
-
-                   <td class="warning">Low</td>
-
-               </tr>
-
-               <tr>
-
-                   <td>101</td>
-
-                   <td>Pencil</td>
-
-                   <td>Writing Supply</td>
-
-                   <td>11</td>
-
-                   <td class="warning">Low</td>
-
-               </tr>
-
-               <tr>
-
-                   <td>101</td>
-
-                   <td>Pencil</td>
-
-                   <td>Writing Supply</td>
-
-                   <td>11</td>
-
-                   <td class="warning">Low</td>
-
-               </tr>
-
-               <tr>
-
-                   <td>101</td>
-
-                   <td>Pencil</td>
-
-                   <td>Writing Supply</td>
-
-                   <td>11</td>
-
-                   <td class="warning">Low</td>
-
-               </tr>
-
-               <tr>
-
-                   <td>101</td>
-
-                   <td>Pencil</td>
-
-                   <td>Writing Supply</td>
-
-                   <td>11</td>
-
-                   <td class="warning">Low</td>
-
-               </tr>
-
-           </tbody>
-
-        </table>
-
-        <a href="#"> Show All</a>
-
-       </div>
-
-       <div class="right">
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Help Center</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    </head>
+        <div class="container">
+           
+              <aside>
                 <div class="top">
-
-                    <button id="menu-btn" @click="toggleMenu">
-
-                        <span class="material-icons-sharp">menu</span>
-
-                    </button>
-
+                    <div class="logo">
+                        <img src="../assets/images/logo cloud.png" alt="logo">
+                        <h2 class="stock_up">Stock Up</h2>
+                    </div>
+                     <div class = "close" id = "close-btn">
+                        <span class="material-icons-sharp">close</span>
+                     </div>
                 </div>
+                <div class="sidebar">
+        <router-link to="/StaffDashboard" >
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Dashboard</h3>
+        </router-link>
+    
+        <router-link to="/StaffInventory">
+            <span class="material-icons-sharp">inventory</span>
+            <h3>Inventory</h3>
+        </router-link>
 
+        <router-link to="/StaffHelpSupport" class=" active">
+            <span class="material-icons-sharp">help</span>
+            <h3>Help Support</h3>
+        </router-link>
+    
+        <router-link to="/Logout">
+            <span class="material-icons-sharp">logout</span>
+            <h3>Logout</h3>
+        </router-link>
+    </div>
+            </aside>
+           
+           
+                <div class="main-content">
+                    <h1 class="dash-text">Help Center</h1>
+                </div>
+   
+             
+                <div class="about">
+                    <h1>About Our System</h1>
+                    <p>The StockUp Inventory Management System helps educational institutions efficiently manage their inventory of school supplies and resources.</p>
+                </div>
+   
+                <div class="qrg-wrapper">
+    <div class="header">
+      <h1>Quick Reference Guides</h1>
+    </div>
+    <div class="qrg-inner">
+      <div
+        class="qrg-item"
+        v-for="(item, index) in qrgItems"
+        :key="index"
+        @click="toggleQRG(index)"
+        :class="{ active: item.active }"
+      >
+        <h3>
+          <b>{{ item.title }}</b>
+          <span class="qrg-plus" :class="{ active: item.active }">
+            <i class="fa-solid fa-plus"></i>
+          </span>
+        </h3>
+        <div class="qrg-body" v-show="item.active" :style="{ maxHeight: item.active ? '1000px' : '0px' }">
+          <b>Steps:</b>
+          <ul>
+            <li v-for="(step, stepIndex) in item.steps" :key="stepIndex">
+              <b>{{ stepIndex + 1 }}.</b> {{ step }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div class="faq-wrapper">
+    <div class="header">
+      <h1>Frequently Asked Questions</h1>
+    </div>
+
+
+    <div class="faq-inner">
+      <div
+        class="faq-item"
+        v-for="(item, index) in faqItems"
+        :key="index"
+        @click="toggleFAQ(index)"
+        :class="{ active: item.active }"
+      >
+        <h3>
+          {{ item.question }}
+          <i class="fa-solid fa-chevron-down chevron" :class="{ active: item.active }"></i>
+        </h3>
+        <div class="faq-body" :style="{ height: item.active ? 'auto' : '0' }">
+          <p>{{ item.answer }}</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+   
+                <!-- CONTACT FORM -->
+                <div class="contact-form">
+                    <div class="header">
+                        <h2>Contact Support</h2>
+                    </div>
+                    <form id="contactForm" class="contact-form-inner" action="mailto:stockup.imsystem@gmail.com" method="post" enctype="text/plain">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <input type="text" placeholder="Subject" required>
+                        <textarea placeholder="Your Question or Message" rows="4" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
             </div>
-
-           <!-- End of top -->
-
-       </main>
-
-       <!-- END OF MAIN -->
-
-       <!-- Profile on top  -->
-
+        </template>
    
-
-   </div>
-
-               <!-- End Recent  -->
-
    
-
-       <!-- <script src="./order.js"></script>
-
-       <script src="./index.js"></script> -->
-
-   </template>
-
-   
-
-   <script>
-
- export default {
-
-    data() {
-
-        return {
-
-            isMenuVisible: false
-
-        };
-
+        <!--BAHALA KANA DITO JOHANNES HAHAHAHAHAHAHHA-->
+<script>
+export default {
+  data() {
+    return {
+      qrgItems: [
+        {
+          title: 'Navigating the Dashboard',
+          active: false,
+          steps: [
+            'Log in to the system using your username and password.',
+            'Click on the Dashboard option from the navigation bar.',
+            'View key information such as: Popular items, Recent user activities, Inventory summaries.',
+            'Use shortcuts on the dashboard to access specific features.',
+          ],
+        },
+        {
+          title: 'Adding New Items to Inventory',
+          active: false,
+          steps: [
+            'Navigate to the Inventory section.',
+            'Click on the Add Item button.',
+            'Fill in the required details such as: Item name, Category, Quantity, Other specifications.',
+            'Click the Save button to add the item to the inventory.',
+          ],
+        },
+        {
+          title: 'Removing Items from Inventory',
+          active: false,
+          steps: [
+            'Go to the Inventory section.',
+            'Select the item you wish to remove.',
+            'Click the Delete button.',
+            'Confirm the deletion to remove the item from the system.',
+          ],
+        },
+        {
+          title: 'Generating Stock Reports',
+          active: false,
+          steps: [
+            'Go to the Reports section from the dashboard.',
+            'Choose the type of report you wish to generate.',
+            'Set the filters such as date range, categories, or item status.',
+            'Click on Generate Report to view or download the report.',
+          ],
+        },
+      ],
+      faqItems: [
+        {
+          question: "What should I do if I cannot access the dashboard?",
+          answer: "Ensure you’re logged in with the correct credentials. If the issue persists, contact system support for assistance.",
+          active: false,
+        },
+        {
+          question: "How do I add new items to the inventory?",
+          answer: "Navigate to the Inventory section and click Edit. Fill in the required details (e.g., name, category, quantity) and click Add button.",
+          active: false,
+        },
+        {
+          question: "What happens if I enter incorrect stock levels?",
+          answer: "Click Edit in the Inventory section. Input the correct details of the existing item and click the Update button.",
+          active: false,
+        },
+        {
+          question: "How can I view the login history for all users?",
+          answer: "Admins can view login history in the Login Tracker, where all staff login/logout records are displayed.",
+          active: false,
+        },
+        {
+          question: "How can I contact support for further assistance?",
+          answer: "Use the Contact Support option in the Help Center to reach our technical team. Provide a detailed description of the issue for faster resolution.",
+          active: false,
+        },
+        {
+          question: "How can I delete an item from the inventory?",
+          answer: "Navigate to the Inventory section and click Edit. Fill in the required details (e.g., name, category, quantity) of the item you want to delete and click the Delete button.",
+          active: false,
+        },
+        {
+          question: "How can I update the details of an item?",
+          answer: "Navigate to the Inventory section and click Edit. Fill in the required details (e.g., name, category, quantity) of the item you want to update and click the Update button.",
+          active: false,
+        },
+      ],
+      bodyHeight: '0',
+    };
+  },
+  methods: {
+    toggleQRG(index) {
+      this.qrgItems.forEach((item, i) => {
+        item.active = i === index ? !item.active : false;
+        this.bodyHeight = item.active ? 'auto' : '0';
+      });
     },
-
-    methods: {
-
-        toggleMenu() {
-
-            this.isMenuVisible = !this.isMenuVisible;
-
-        }
-
-    }
-
+    toggleFAQ(index) {
+      this.faqItems.forEach((item, i) => {
+        item.active = i === index ? !item.active : false;
+        this.bodyHeight = item.active ? 'auto' : '0';
+      });
+    },
+  },
 };
+</script>
 
-   </script>
-
-   
-
-   <style scoped>
 
    
-
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-
+    <style scoped>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
    
+    * {
+        margin: 0;
+        padding: 0;
+        outline: 0;
+        appearance: none;
+        border: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+   
+    html {
+        font-size: 14px;
+    }
+   
+    body {
+        background: url(../assets/images/back.png);
+        width: 100vw;
+        height: 100vh;
+        font-family: poppins, sans-serif;
+        font-size: 0.88rem;
+        background-color: rgb(160, 173, 237);
+        user-select: none;
+        overflow-x: hidden;  
+        color: #363949;
+    }
+   
+    .container {
+    display: grid;
+    width: calc(93% - 14rem); /* Adjust the width to account for the sidebar */
+    margin-left: 17rem; /* Add margin to the left to avoid overlap */
+    gap: 1.8rem;
+    grid-template-columns: auto; /* Change to a single column layout */
+}
+   
+    a {
+        color: #363636;
+    }
+   
+    img {
+        display: block;
+        width: 100%;
+    }
+   
+    h1 {
+        font-weight: 800;
+        font-size: 1.8rem;
+    }
+   
+    h2 {
+        font-size: 1.4rem;
+    }
+   
+    h3 {
+        font-size: 0.87rem;
+    }
+   
+    .text-muted {
+        color: #7d8da1;
+    }
+   
+    h4 {
+        font-size: 0.87;
+    }
+   
+    p {
+        color: #677483;
+    }
+   
+    b {
+        color: #677483;
+    }
+   
+    aside{
+    height: 100vh;  
+    background-color: white;
+    position: fixed; /* Fix the sidebar to the left */
+    left: 0; /* Position it to the left */
+    top: 0; /* Align it to the top */
+    width: 14rem; /* Set a specific width for the sidebar */
+    z-index: 10; /* Ensure it is above other content */
+    }
+   
+    aside .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+    margin-left:2rem ;
+    }
+   
+    /* aside .logo img {
+    width: 150px; this if for the img logo
+    */
+   
+   
+    aside .logo {
+    display:flex;
+    gap:0.8rem;
+    position: relative;
+   
+    }
+    aside .logo img {
+    width: 2rem;
+    height: 2rem;
+    }
+   
+    aside .close{
+    display: none;
+    }
+   
+    /* ===============side bar ============ */
+   
+    aside .sidebar{
+    /* background-color: white; */
+    background:white;
+    display: flex;
+    flex-direction: column;
+    height: 86vh;
+    position: relative;
+    top: 3rem;
+    }
+   
+    aside h3 {
+    font-weight: 500;
+   
+    }
+   
+    aside .sidebar a {
+    display: flex;
+    color: #677483;
+    margin-left: 2rem;
+    gap: 1rem;
+    align-items: center;
+    position: relative;
+    height: 3.7rem;
+    transition:  all 300ms ease;
+   
+    }
+    /* ============ */
+    aside .sidebar a span {
+    transition: all 300ms ease;
+    }
+   
+   
+    aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all 300ms ease;
+    }
+   
+    aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 2rem;
+    width: 100% ;
+    }
+   
+    aside .sidebar a.active {
+    background: aqua;
+    color: blue;
+    margin-left: 0;
+    }
+   
+    aside .sidebar a.active:before{
+    content: '';
+    width: 6px;
+    height: 100%;
+    background: blue;
+    }
+   
+    aside .sidebar a.active span{
+    color: blue;
+    margin-left: calc(1rem - 3px);
+    }
+   
+    aside .sidebar a:hover{
+    color: var(#f74d4d)
+    }
+   
+    aside .sidebar a:hover span {
+    margin-left: 1rem;
+    }
+   
+ 
+   
+    main .dash-text {
+        position: absolute;
+        top: 1rem;
+        left: 17rem;
+        color: black;
+   
+    }
+   
+   
+    /* ABOUT SECTION */
+    .about {
+        width: 60rem;
+        margin: 0.1rem auto;
+        padding: 1rem;
+        background: #363636;
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        left: 4rem;
+        transform: translateX(0); /* Removed translateX(-50%) */
+        z-index: 1;
+    }
+   
+   
+    .about h2 {
+        padding: 0.8rem;
+    }
+   
+    .about p {
+        background: white;
+        color: #363636;
+        padding: 1rem;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+/* QUICK REFERENCE GUIDE */
+.qrg-wrapper {
+  width: 65rem;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  margin: 0.1rem auto;
+  left: 4rem;
+  z-index: 1;
+}
 
-    *{
 
-       margin: 0;
+.qrg-inner {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+}
 
-       padding: 0;
 
-       outline: 0;
+.qrg-item {
+  border: 2px solid #ccc;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
 
-       appearance: none;
 
-       border: 0;
+.qrg-item h3 {
+  font-weight: bold;
+  font-size: 1rem;
+}
 
-       text-decoration: none;
 
-       list-style: none;
+.qrg-item b {
+  color: #363636;
+}
 
-       box-sizing: border-box;
 
+.qrg-item .qrg-body {
+  padding-left: 10px;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
+}
+
+
+.qrg-item ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+
+.qrg-item .qrg-plus {
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.qrg-item.active h3 {
+  color: #0000ff;
+}
+
+
+.qrg-item:hover {
+  background-color: #f9f9f9;
+}
+
+
+.qrg-item .qrg-plus.active {
+  color: #0000ff;
+}
+ /* FREQUENTLY ASKED QUESTIONS */
+.faq-wrapper {
+  width: 65rem;
+  margin: 0.1rem auto;
+  padding: 1rem;
+  color: white;
+  border-radius: 10px;
+  left: 4rem;
+  z-index: 1;
+  position: relative;
+
+
+}
+
+
+.faq-inner {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+
+.faq-item {
+  border: 2px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 1rem;
+}
+
+
+.faq-item h3 {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #363636;
+}
+
+
+.faq-item .chevron {
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+
+.faq-item .chevron.active {
+  transform: rotate(180deg);
+}
+
+
+.faq-item .faq-body {
+  padding-left: 10px;
+  height: 0;
+  overflow: hidden;
+  color: #677483;
+  transition: height 0.3s ease;
+}
+
+
+.faq-item .faq-body p {
+  margin: 0;
+  color: #363636;
+}
+
+
+.faq-item:hover {
+  background-color: #f1f7f5;
+}
+
+
+.faq-item.active h3 {
+  color: #0000ff;
+}
+
+
+.faq-item .chevron.active {
+  color: #0000ff;
+}
+   
+    .header {
+        background: #363636;
+        color: #fff;
+        padding: 0.8rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+   
+    .header h1 {
+        margin:  0;
+    }
+   
+    .contact-form {
+        width: 50rem;
+        margin: 0.1rem auto;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 2px  10px rgba(0, 0, 0, 0.1);
+        position: relative;
+        left: 4rem;
+        transform: translateX(0); /* Removed translateX(-50%) */
+        z-index: 1;
+    }
+   
+    .contact-form-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 1rem;
+    }
+   
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.8rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: #363636;
+    }
+   
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #00ffff;
+        outline: none;
+    }
+   
+    .contact-form button {
+        padding: 0.8rem;
+        background: #363636;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+   
+    .contact-form button:hover {
+        background: #00ffff;
+        color: #0000ff;
     }
 
-   
 
-    html{
 
-        font-size:14px;
 
-         }
 
-   
 
-   body {
+@media (max-width: 957px) {
+body {
+    font-size: 0.75rem; /* Smaller font size for mobile */
+}
 
-       background: url(../assets/images/back.png);
 
-       background-repeat: no-repeat;
+.container {
+    width: 100%; /* Full width on mobile */
+    margin-left: 0; /* Remove left margin */
+}
 
-       background-attachment: fixed;
 
-       background-size: cover;
+.about, .qrg-wrapper, .faq-wrapper, .contact-form {
+    width: 90%; /* Adjust width for mobile */
+    margin: 0 auto; /* No margin for very close spacing */
+    position: relative;
+    left: 0;
+}
 
-       width: 100vw;
 
-       height: 100vh;
+h1, h2, h3 {
+    font-size: 1.2rem;
+}
 
-       font-family: poppins, sans-serif;
 
-       font-size: 0.88rem;
+.qrg-item, .faq-item {
+    font-size: 0.9rem;
+}
 
-       user-select: none;
 
-       overflow-x:hidden;  
+.contact-form input, .contact-form textarea,
+.contact-form button {
+    font-size: 0.9rem;
+}
+    @media (max-width: 768px) {
 
-       color: #363949;
 
-   }
-
-   
-
-   .container{
-
-       display: grid;
-
-       width: 96%;
-
-       gap:3vh;
-
-       grid-template-columns: 14rem auto ;
-
-       height: 100vh;
-
-   }
-
-   
-
-   
-
-   a {
-
-       color: #363636;
-
-   }
-
-   
-
-   
-
-   img {
-
-       display: block;
-
-       width: 100%;
-
-   }
-
-   
-
-   
-
-   h1 {
-
-       font-weight: 800;
-
-       font-size: 1.8rem;
-
-   }
-
-   
-
-   
-
-   h2 {
-
-       font-size: 1.4rem;
-
-   }
-
-   
-
-   
-
-   h3 {
-
-       font-size: 0.87rem;
-
-   }
-
-   .text-muted {
-       color: #7d8da1;
-   }
-
-   
-
-   
-
-   h4 {
-
-       font-size: 0.87;
-
-   }
-
-   
-
-   
-
-   p {
-
-       color: #677483;
-
-   }
-
-   
-
-   
-
-   b {
-
-       color: #677483;
-
-   }
-
-   
-
-   
-
-   aside {
-
-       height: 100vh;  
-
-       background-color: white;
-
-       position: fixed;
-
-       left: 0;
-
-       top: 0;
-
-       width: 14rem;
-
-       z-index: 10;
-
-   }
-
-   
-
-   
-
-   aside .top {
-
-       display: flex;
-
-       align-items: center;
-
-       justify-content: space-between;
-
-       margin-top: 1.4rem;
-
-       margin-left: 2rem;
-
-   }
-
-   
-
-   
-
-   aside .logo {
-
-       display: flex;
-
-       gap: 0.8rem;
-
-       position: relative;
-
-   }
-
-   
-
-   
-
-   aside .logo img {
-
-       width: 2rem;
-
-       height: 2rem;
-
-   }
-
-   
-
-   
-
-   aside .close {
-
-       display: none;
-
-   }
-
-   
-
-   
-
-   aside .sidebar {
-
-       background: white;
-
-       display: flex;
-
-       flex-direction: column;
-
-       height: 86vh;
-
-       position: relative;
-
-       top: 3rem;
-
-   }
-
-   
-
-   
-
-   aside h3 {
-
-       font-weight: 500;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a {
-
-       display: flex;
-
-       color: #677483;
-
-       margin-left: 2rem;
-
-       gap: 1rem;
-
-       align-items: center;
-
-       position: relative;
-
-       height: 3.7rem;
-
-       transition: all 300ms ease;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a span {
-
-       font-size: 1.6rem;
-
-       transition: all 300ms ease;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a:last-child {
-
-       position: absolute;
-
-       bottom: 2rem;
-
-       width: 100%;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a.active {
-
-       background: aqua;
-
-       color: blue;
-
-       margin-left: 0;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a.active:before {
-
-       content: '';
-
-       width: 6px;
-
-       height: 100%;
-
-       background: blue;
-
-   }
-
-   
-
-   
-
-   aside .sidebar a:hover {
-
-       color: var(#f74d4d);
-
-   }
-
-   
-
-   
-
-   aside .sidebar a:hover span {
-
-       margin-left: 1rem;
-
-   }
-
-   
-
-   /*  ======== MAIN DASH BOARD ============== */
-
-   main{
-
-       margin-top: 1rem;
-
-       grid-column: 2;
-
-       padding: 1rem;
-
-   }
-
-   
-
-   
-
-   main .dash-text{
-
-       color: black;
-
-   }
-
-   
-
-   main .date{
-
-       display: inline-block;
-
-       background: rgba(148, 129, 129, 0.18);
-
-       border-radius:  0.4rem;
-
-       margin-top: 1rem;
-
-       padding: 0.5rem 1.6rem;
-
-   }
-
-   
-
-   main .date input[type="date"]{
-
-       background: transparent;
-
-       color: #212640;;
-
-   }
-
-   
-
-   main .insights {
-
-       display: grid;
-
-       grid-template-columns: repeat(3, 1fr);
-
-       gap: 1.6rem;
-
-   
-
-   }
-
-   
-
-   main .insights > div {
-
-       background: rgba(250, 250, 550, 0.5);
-
-       padding: 1.3rem;
-
-       border-radius: 2rem ;
-
-       margin-top: 1rem;
-
-       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-       transition: all 300ms ease;
-
-   }
-
-   
-
-   main .insights > div:hover {
-
-       box-shadow: none;
-
-   }
-
-   
-
-   main .insights > div span {
-
-       background: blue;
-
-       padding: 0.5rem;
-
-       border-radius: 50%;
-
-       color: white;
-
-       font-size: 2rem;
-
-   }
-
-   
-
-   main .insights > div.expenses span {
-
-       background: green;
-
-   }
-
-   main .insights > div.income span {
-
-       background-color: red;
-
-   }
-
-   
-
-   main .insights > div .middle {
-
-       display: flex;
-
-       align-items: center;
-
-       justify-content: space-between;
-
-   }
-
-   
-
-   main .insights h3{
-
-       margin: 1rem 0 0.6rem;
-
-       font-size: 1rem;
-
-   }
-
-   
-
-   main .insights .progress {
-
-       position: relative;
-
-       width: 92px;
-
-       height: 92px;
-
-       border-radius: 50%;
-
-   }
-
-   
-
-   
-
-   main .insights .progress .number{
-
-       position: absolute;
-
-       top: 0;
-
-       left: 0;
-
-       height: 100%;
-
-       width: 100%;
-
-       display: flex;
-
-       align-items: center;
-
-   }
-
-   
-
-   main .insights small{
-
-       margin-top: 1.6rem;
-
-       display: block;
-
-   }
-
-   
-
-   /* ======================Inventory========== */
-
-   
-
-   main .recent-orders{
-
-       margin-top: 2rem;
-
-   }
-
-   
-
-   main .recent-orders  h2 {
-
-       margin-bottom: 0.8rem;
-
-   }
-
-   
-
-   main .recent-orders table{
-
-       background:rgba(250, 250, 550, 0.8);
-
-       width: 100%;
-
-       border-radius: 2rem;
-
-       padding: 1.8rem;
-
-       text-align: center;
-
-       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-       /* transition: all 300ms ease; */
-
-   }
-
-   
-
-   
-
-   main .recent-orders table:hover{
-
-       box-shadow: none;
-
-   }
-
-   
-
-   main table tbody td{
-
-       height: 2.8rem ;
-
-       border-bottom: 1px solid grey;
-
-       color: #677483;
-
-   }
-
-   
-
-   main table tbody tr:last-child{
-
-       border: none
-
-   }
-
-   
-
-   main .recent-orders a{
-
-       text-align: center;
-
-       display: block;
-
-       margin: 1rem auto;
-
-       color: #7380ec ;
-
-   }
-
-   
-
-   /* POTANG INAA MOOOO LOG IN TRACKER  */
-
-   
-
-   main .tracker{
-
-       margin-top: 1rem;
-
-   }
-
-   
-
-   main .tracker  h2 {
-
-       margin-bottom: 0.8rem;
-
-   }
-
-   
-
-   main .tracker table{
-
-       background:rgba(250, 250, 550, 0.8);
-
-       width: 100%;
-
-       border-radius: 2rem;
-
-       padding: 1.8rem;
-
-       text-align: center;
-
-       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-       /* transition: all 300ms ease; */
-
-   }
-
-   
-
-   
-
-   main .tracker table:hover{
-
-       box-shadow: none;
-
-   }
-
-   
-
-   main table tbody td{
-
-       height: 2.8rem ;
-
-       border-bottom: 1px solid grey;
-
-       color: #677483;
-
-   }
-
-   
-
-   main table tbody tr:last-child{
-
-       border: none
-
-   }
-
-   
-
-   main .tracker a{
-
-       text-align: center;
-
-       display: block;
-
-       margin: 1rem auto;
-
-       color: #7380ec ;
-
-   }
-
-   
-
-   .warning{
-
-       color: Red ;
-
-   }
-
-   
-
-   .primary{
-
-       color: #7380ec;
-
-   }
-
-   
-
-   /* PROFILE PICS  */
-
-   .profile-photo img{
-
-       border-radius: 50%;
-
-       height: 40px;
-
-       width: 40px;
-
-   }
-
-   
-
-   /* RIGHT SIDE  */
-
-    .right{
-
-       margin-top: 1.4rem;
-
+        .main-content .dash-text {
+        font-size: 2rem;
     }
-
-   
-
-    .right .top{
-
-       display: flex;
-
-       justify-content: end;
-
-       gap: 2rem;
-
-       /* background-color; */
-
-    }
-
-   
-
-    .right .top button{
-
-       display: none;
-
-    }
-
-   
-
-   
-
-    .right .top .profile{
-
-       display: flex;
-
-       gap: 2rem;
-
-       text-align: right;
-
-    }
-
-   
-
-   /* =================Media Queries ======================= */
-
-   /* tabble mode  */
-
-   @media screen and (max-width: 1200px) {
-
-   
-
-       .container{
-
-           width: 94%;
-
-           grid-template-columns: 5rem auto;
-
-       }
-
-       aside{
-
-           position: fixed;
-
-           width: 6rem;
-
-       }
-
-   
-
-       aside .logo h2{
-
-           display: none;
-
-       }
-
-   
-
-       aside .sidebar h3{
-
-           display: none;
-
-       }
-
-   
-
-       aside .sidebar a {
-
-           width: 5.6rem;
-
-       }
-
-   
-
-       aside .sidebar a:last-child{
-
-           position: absolute;
-
-           bottom:0px;
-
-       }
-
-   
-
-       main .insights{
-
-           grid-template-columns: 1fr;
-
-           gap: 0;
-
-       }
-
-   
-
-       main .recent-orders {
-
-           width: 100%;
-
-           position: relative;
-
-           left: auto;
-
-           transform: none;
-
-           margin: 2rem 0 0 0;
-
-       }
-
-   
-
-       main .recent-orders table{
-
-           width: 100%;
-
-       }
-
-   
-
+    .container {
+        width: 100%;
+        margin-left: 1rem;
        
+    }
 
-   
 
-       main .tracker{
+    .about, .qrg-wrapper, .faq-wrapper, .contact-form {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        left: 0;
+        margin-right: 3rem;
+        margin-bottom: 0 auto;
 
-           width: 100%;
 
-           position: relative;
+    }
 
-           left: auto;
 
-           transform: none;
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
 
-           margin: 2rem 0 0 0;
 
-       }
+    .qrg-item, .faq-item {
+        font-size: 0.9rem;
+    }
 
-       main .tracker table{
 
-           width: 100%;
+    .contact-form input, .contact-form textarea,
+    .contact-form button {
+        font-size: 0.9rem;
+    }
+}
 
-       }
 
-   
+@media (max-width: 480px) {
+    .main-content .dash-text {
+        font-size: 1.5rem;
+        left: 2rem;
+    }
 
-   
 
-       main table thead tr th:last-child,
+    h1, h2, h3 {
+        font-size: 1rem;
+    }
 
-       main table thead tr th:first-child {
 
-       display: none;
+    .qrg-item, .faq-item {
+        font-size: 0.8rem;
+    }
 
-   
 
-       }
-
-   
-
-       main table tbody tr td:last-child,
-
-       main table tbody tr td:first-child {
-
-       display: none;
-
-   }
-
-   
-
-   /* mobile */
-
-   /* ==========================MOBILE ====================== */
-
-   @media screen  and (max-width: 768px) {
-
-       .container {
-
-           width: 100%;
-
-           grid-template-columns: 1fr;
-
-       }
-
-   
-
-   
-
-       aside {
-
-           position: fixed;
-
-           left: 0;
-
-           top: 0;
-
-           width: 18rem;
-
-           height: 100vh;
-
-           background: rgba(250, 240, 540, 0.3);
-
-           backdrop-filter: blur(9px);
-
-           transform: translateX(-100%); /* Hide by default */
-
-           z-index: 3;
-
-       }
-
-       
-
-       aside.show {
-
-           transform: translateX(0); /* Slide into view */
-
-       }
-
-   
-
-   @keyframes showMenu {
-
-       to {
-
-           left: 0;
-
-       }
-
-   }
-
-   
-
-       aside .logo {
-
-           margin-left: 1rem;  
-
-       }
-
-   
-
-       aside .logo h2{
-
-           display: inline;
-
-       }
-
-       aside .sidebar  h3{
-
-           display: inline;
-
-       }
-
-   
-
-       aside .sidebar a{
-
-           width: 100%;
-
-           height: 3.4rem;
-
-       }
-
-   
-
-       aside .sidebar a:last-child{
-
-          position: absolute;
-
-          bottom: 0;
-
-       }
-
-   
-
-       aside .close{
-
-           display: inline-block;
-
-           cursor: pointer;
-
-       }
-
-       main {
-
-           margin-top: 8rem;
-
-           padding: 0 1rem;
-
-       }
-
-   
-
-       main{
-
-           grid-column: 1;
-
-       
-
-       }
-
-   
-
-       main .recent-orders{
-
-           position: relative;
-
-           margin: 3rem 0 0 0;
-
-           width: 100%;
-
-       }
-
-   
-
-       main .recent-orders table{
-
-           width: 100%;
-
-           margin: 0;
-
-       }
-
-   
-
-       main .tracker{
-
-           position: relative;
-
-           margin: 3rem 0 0 0;
-
-           width: 100%;
-
-       }
-
-   
-
-       main .tracker table{
-
-           width: 100%;
-
-           margin: 0;
-
-       }
-
-   
-
-   
-
-   
-
-   
-
-   
-
-       .right {
-
-           width: 94%;
-
-           margin: 0 auto 4rem;
-
-       }
-
-   
-
-       .right .top{
-
-           position: fixed;
-
-           top: 0;
-
-           left: 0;
-
-           align-items: center;
-
-           padding: 0 0.8rem;
-
-           height: 4.6rem;
-
-           background: rgb(248, 248, 248);
-
-           width: 100%;
-
-           margin: 0;
-
-           z-index: 2;
-
-           box-shadow:  0 1rem 1rem rgb(194, 216, 226);
-
-       }
-
-   
-
-       .right .top .theme-toggler{
-
-           width: 4.4rem;
-
-           position: absolute;
-
-           left: 66%;
-
-       }
-
-   
-
-       .right .profile .info{
-
-           display: none;
-
-       }
-
-   
-
-       .right .top button{
-
-           display: inline-block;
-
-           background: transparent;
-
-           cursor: pointer;
-
-           color: rgb(9, 5, 5);
-
-           position: absolute;
-
-           left: 1rem;
-
-       }
-
-   
-
-       .right .top button span {
-
-           font-size: 2rem;
-
-   
-
-       }
-
-   }
-
-   }
-
-   
-
-   </style>
-
+    .contact-form input, .contact-form textarea,
+    .contact-form button {
+        font-size: 0.8rem;
+    }
+}
+}
+</style>
